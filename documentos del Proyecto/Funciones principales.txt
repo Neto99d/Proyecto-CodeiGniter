@@ -4,7 +4,7 @@ Loguearse/Registrarse (verificar si es admin o no)
 
 Informacion de productos (Obtener la informacion del producto para mostrar los detalles del mismo, 
 
-Uso del carrito (agregar al carrito, obtener preio de producto/editar cantidad pedida/eliminar del carrito/ calculo de total a pagar),
+Uso del carrito (agregar al carrito, obtener precio de producto/editar cantidad pedida/eliminar del carrito/ calculo de total a pagar),
 
 Ejecucion de compra, pago por transfermovil (formulario como el de la tienda de etecsa por ejemplo y la forma de pago (al menos simular esto)) o posibilidad de entrega a domicilio si esta disponible, hacer un calculo del total a pagar sumando el domicilio en caso que se elija esta opcion)
 
