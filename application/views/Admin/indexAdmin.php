@@ -102,6 +102,11 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <button class='btn btn-outline-success me-2' type='button'>Administración</button>
                                 </li>
                                 <li class='nav-item'>
+                                    <button class='btn btn-outline-success me-2' type='button' data-bs-toggle='tooltip'
+                                        data-bs-placement='bottom'
+                                        title="Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.">Recomendaciones</button>
+                                </li>
+                                <li class='nav-item'>
                                     <button class='btn btn-outline-success me-2' type='button'>Contacto</button>
                                 </li>
                             </ul>
