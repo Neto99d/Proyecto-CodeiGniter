@@ -1,3 +1,5 @@
+Esto puede irse actualizando
+
 A nivel de cliente
 
 Loguearse/Registrarse (verificar si es admin o no)
