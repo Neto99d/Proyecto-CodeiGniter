@@ -98,10 +98,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                 </svg> Iniciar sesión/Registrarse</a></li>
                                     </ul>
                                 </li>
-                                <!-- ESTA OPCION SOLO SALE SI ES ADMINISTRADOR <-->
-                               <!-- <li class='nav-item'>
+                                <li class='nav-item'>
                                     <button class='btn btn-outline-success me-2' type='button'>Administración</button>
-                                </li><-->
+                                </li>
                                 <li class='nav-item'>
                                     <button class='btn btn-outline-success me-2' type='button'>Contacto</button>
                                 </li>

@@ -2,7 +2,7 @@ Esto puede irse actualizando
 
 A nivel de cliente
 
-Loguearse/Registrarse (verificar si es admin o no)
+Loguearse/Registrarse (verificar si es admin o no [La pestaña Administracion (donde se hacen las operaciones que solo interesa al admin) esta prevista que se muestre si el usuario es admin])
 
 Informacion de productos (Obtener la informacion del producto para mostrar los detalles del mismo, 
 
