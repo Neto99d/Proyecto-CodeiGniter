@@ -8,13 +8,10 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css' ?>">
+    <script src="<?= base_url().'assets/Jquery/jquery-3.6.0.min.js'?>"></script>
+    <script src="<?= base_url().'assets/js/bootstrap.bundle.min.js' ?>"></script>
+    <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
     <title>Interfaz Beta</title>
-    <style>
-    .custom-tooltip {
-        --bs-tooltip-bg: var(--bs-primary);
-    }
-    </style>
 </head>
 
 <body>
@@ -22,13 +19,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <header>
         <div class='container-fluid-full'>
             <nav class='navbar bg-light'>
-                <div class='container'>
+                <div class='container-fluid'>
                     <a class='navbar-brand' href='http://localhost/Proyecto-CodeiGniter/'>Interfaz Beta</a>
-                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse'
-                        data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
-                        aria-expanded='false' aria-label='Toggle navigation'>
-                        <span class='navbar-toggler-icon'></span>
-                    </button>
                     <div class='align-content-end'>
 
                         <ul class='nav-justified'>
@@ -103,10 +95,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                 </svg> Iniciar sesión/Registrarse</a></li>
                                     </ul>
                                 </li>
-                                <!-- ESTA OPCION SOLO SALE SI ES ADMINISTRADOR <-->
-                                <!-- <li class = 'nav-item'>
-<button class = 'btn btn-outline-success me-2' type = 'button'>Administración</button>
-</li><-->
+                                <li class='nav-item'>
+                                    <button class='btn btn-outline-success me-2' type='button'>Administración</button>
+                                </li>
                                 <li class='nav-item'>
                                     <button class='btn btn-outline-success me-2' type='button' data-bs-toggle='tooltip'
                                         data-bs-placement='bottom'
@@ -132,58 +123,58 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <!-- CONTENIDO <-->
     <section>
         <!-- CARRUSEL DE IMAGENES <-->
-        <div class='container-fluid-full'>
-            <div id='carouselExampleCaptions' class='carousel slide' data-bs-ride='false'>
-                <div class='carousel-indicators'>
-                    <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' class='active'
-                        aria-current='true' aria-label='Slide 1'></button>
-                    <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1'
-                        aria-label='Slide 2'></button>
-                    <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2'
-                        aria-label='Slide 3'></button>
-                </div>
-                <div class='carousel-inner'>
-                    <div class='carousel-item active'>
-                        <img src='assets/images/R.jfif' class='rounded mx-auto d-block' width='1200' height='450'>
-                        <div class='carousel-caption d-none d-md-block'>
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                    </div>
-                    <div class='carousel-item'>
-                        <img src='assets/images/R (1).jfif' class='rounded mx-auto d-block' width='1200' height='450'>
-                        <div class='carousel-caption d-none d-md-block'>
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
-                    <div class='carousel-item'>
-                        <img src='assets/images/R (3).jfif' class='rounded mx-auto d-block' width='1200' height='450'>
-                        <div class='carousel-caption d-none d-md-block'>
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleCaptions'
-                    data-bs-slide='prev'>
-                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                    <span class='visually-hidden'>Previous</span>
-                </button>
-                <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleCaptions'
-                    data-bs-slide='next'>
-                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                    <span class='visually-hidden'>Next</span>
-                </button>
+        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="assets/images/R.jfif" class="rounded d-block w-100" alt="..." width="1200" height="470">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="assets/images/R (1).jfif" class="rounded d-block w-100" alt="..." width="1200"
+                        height="470">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="assets/images/R (3).jfif" class="rounded d-block w-100" alt="..." width="1200"
+                        height="470">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
         <!-- LO MAS VENDIDO <-->
         <div class='container-fluid'>
             <br>
             <br>
-            <h3>Lo más vendido</h3>
+            <h3> Lo más vendido</h3>
             <br>
-            <div class='container'>
+            <div class='container-fluid'>
                 <div class='row row-cols-1 row-cols-md-3 g-4'>
                     <div class='col'>
                         <div class='card'>
@@ -263,7 +254,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             <br>
             <h3>Ofertas del día</h3>
             <br>
-            <div class='container'>
+            <div class='container-fluid'>
                 <div class='row row-cols-1 row-cols-md-3 g-4'>
                     <div class='col'>
                         <div class='card h-100'>
@@ -347,7 +338,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             </footer>
         </div>
     </footer>
-    <script src="<?= base_url().'assets\js\bootstrap.min.js' ?>"></script>
+
 </body>
 
 </html>
