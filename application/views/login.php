@@ -152,7 +152,6 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <form>
                                 <div class="text-center mb-3">
                                     <h5>Entre sus credenciales</h5>
-                                     <h6>(Si no tiene cuenta vaya a Registrarse)</h6>
                                 </div>
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
@@ -187,82 +186,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
                                 </div>
-                                <!-- Register buttons 
+
                                 <div class="text-center">
-                                    <p>Not a member? <a href="#!">Register</a></p>
-                                </div> -->
-                            </form>
-                        </div>
-                        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                            <form>
-                                <div class="text-center mb-3">
-                                    <p>Sign up with:</p>
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-google"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-github"></i>
-                                    </button>
+                                    <p>¿Aún no tienes cuenta? <br>
+                                        <a href="<?php echo base_url();?>index.php/register">Registrarse</a>
+                                    </p>
                                 </div>
-
-                                <p class="text-center">or:</p>
-
-                                <!-- Name input -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="registerName" class="form-control" />
-                                    <label class="form-label" for="registerName">Name</label>
-                                </div>
-
-                                <!-- Username input -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="registerUsername" class="form-control" />
-                                    <label class="form-label" for="registerUsername">Username</label>
-                                </div>
-
-                                <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <input type="email" id="registerEmail" class="form-control" />
-                                    <label class="form-label" for="registerEmail">Email</label>
-                                </div>
-
-                                <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="registerPassword" class="form-control" />
-                                    <label class="form-label" for="registerPassword">Password</label>
-                                </div>
-
-                                <!-- Repeat Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="registerRepeatPassword" class="form-control" />
-                                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-                                </div>
-
-                                <!-- Checkbox -->
-                                <div class="form-check d-flex justify-content-center mb-4">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck"
-                                        checked aria-describedby="registerCheckHelpText" />
-                                    <label class="form-check-label" for="registerCheck">
-                                        I have read and agree to the terms
-                                    </label>
-                                </div>
-
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
                             </form>
                         </div>
                     </div>
-                    <!-- Pills content -->
                 </div>
-            </div>
         </section>
 
 
