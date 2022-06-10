@@ -57,3 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = 'welcome/login';
 $route['register'] = 'welcome/register';
+$route['carrito'] = 'welcome/carrito';
+$route['productos'] = 'welcome/productos';
+$route['contacto'] = 'welcome/contacto';
+

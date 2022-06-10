@@ -32,4 +32,18 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('register');
 	}
+
+	public function carrito()
+	{
+		$this->load->view('carrito');
+	}
+
+	public function productos()
+	{
+		$this->load->view('productos');
+	}
+	public function contacto()
+	{
+		$this->load->view('contacto');
+	}
 }
