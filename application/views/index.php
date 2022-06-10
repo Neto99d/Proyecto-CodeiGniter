@@ -12,6 +12,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <script src="<?= base_url().'assets/js/bootstrap.bundle.min.js' ?>"></script>
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
     <title>Interfaz Beta</title>
+    <style>
+    
+    </style>
 </head>
 
 <body>
@@ -62,15 +65,15 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <nav class='navbar navbar-expand-lg bg-light'>
                     <div class='container-fluid'>
                         <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
-                                    <button class='btn btn-outline-success me-2' type='button'>Inicio</button>
+                                    <a href="" class='btn btn-outline-success me-2'>Inicio</a>
                                 </li>
                                 <li class='nav-item dropdown'>
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'
                                         type='button' data-bs-toggle='dropdown' aria-expanded='false'>Tienda</button>
                                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item' href='#'><svg xmlns='http://www.w3.org/2000/svg'
+                                        <li><a class='dropdown-item' href=""><svg xmlns='http://www.w3.org/2000/svg'
                                                     width='17' height='17' fill='currentColor' class='bi bi-bag-fill'
                                                     viewBox='0 0 16 16'>
                                                     <path
@@ -85,7 +88,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         <li>
                                             <hr class='dropdown-divider'>
                                         </li>
-                                        <li><a class='dropdown-item' href='#'><svg xmlns='http://www.w3.org/2000/svg'
+                                        <li><a class='dropdown-item' href="<?php echo base_url();?>index.php/login"><svg xmlns='http://www.w3.org/2000/svg'
                                                     width='17' height='17' fill='currentColor'
                                                     class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
                                                     <path fill-rule='evenodd'
@@ -95,16 +98,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                 </svg> Iniciar sesión/Registrarse</a></li>
                                     </ul>
                                 </li>
-                                <li class='nav-item'>
+                                <!-- <li class='nav-item'>
                                     <button class='btn btn-outline-success me-2' type='button'>Administración</button>
-                                </li>
+                                </li><-->
                                 <li class='nav-item'>
-                                    <button class='btn btn-outline-success me-2' type='button' data-bs-toggle='tooltip'
+                                    <a href="" class='btn btn-outline-success me-2' data-bs-toggle='tooltip'
                                         data-bs-placement='bottom'
-                                        title="Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.">Recomendaciones</button>
+                                        title="Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.">Recomendaciones</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <button class='btn btn-outline-success me-2' type='button'>Contacto</button>
+                                <a href="" class='btn btn-outline-success me-2'>Contacto</a>
                                 </li>
                             </ul>
                             <form class='d-flex' role='search'>

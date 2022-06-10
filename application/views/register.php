@@ -66,14 +66,14 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <div class='collapse navbar-collapse' id='navbarSupportedContent'>
                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
-                                    <a href="<?php echo base_url();?>index.php"
+                                    <a href='<?php echo base_url();?>index.php'
                                         class='btn btn-outline-success me-2'>Inicio</a>
                                 </li>
                                 <li class='nav-item dropdown'>
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'
                                         type='button' data-bs-toggle='dropdown' aria-expanded='false'>Tienda</button>
                                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item' href=""><svg xmlns='http://www.w3.org/2000/svg'
+                                        <li><a class='dropdown-item' href=''><svg xmlns='http://www.w3.org/2000/svg'
                                                     width='17' height='17' fill='currentColor' class='bi bi-bag-fill'
                                                     viewBox='0 0 16 16'>
                                                     <path
@@ -88,7 +88,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         <li>
                                             <hr class='dropdown-divider'>
                                         </li>
-                                        <li><a class='dropdown-item' href="<?php echo base_url();?>index.php/login"><svg
+                                        <li><a class='dropdown-item' href='<?php echo base_url();?>index.php/login'><svg
                                                     xmlns='http://www.w3.org/2000/svg' width='17' height='17'
                                                     fill='currentColor' class='bi bi-box-arrow-in-right'
                                                     viewBox='0 0 16 16'>
@@ -99,16 +99,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                 </svg> Iniciar sesión/Registrarse</a></li>
                                     </ul>
                                 </li>
-                                <!-- <li class='nav-item'>
-                                    <button class='btn btn-outline-success me-2' type='button'>Administración</button>
-                                </li><-->
+                                <!-- <li class = 'nav-item'>
+<button class = 'btn btn-outline-success me-2' type = 'button'>Administración</button>
+</li><-->
                                 <li class='nav-item'>
-                                    <a href="" class='btn btn-outline-success me-2' data-bs-toggle='tooltip'
+                                    <a href='' class='btn btn-outline-success me-2' data-bs-toggle='tooltip'
                                         data-bs-placement='bottom'
-                                        title="Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.">Recomendaciones</a>
+                                        title='Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.'>Recomendaciones</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <a href="" class='btn btn-outline-success me-2'>Contacto</a>
+                                    <a href='' class='btn btn-outline-success me-2'>Contacto</a>
                                 </li>
                             </ul>
                             <form class='d-flex' role='search'>
@@ -124,35 +124,34 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         </div>
 
     </header>
-    <section class="pb-4 ">
-        <section class="w-100 p-4 d-flex justify-content-center pb-4">
-            <div class="bg-white justify-content-center border rounded-3">
-                <div class="container justify-content-center" style="width: 26rem;">
+    <section class='pb-4 '>
+        <section class='w-100 p-4 d-flex justify-content-center pb-4'>
+            <div class='bg-white justify-content-center border rounded-3'>
+                <div class='container justify-content-center' style='width: 26rem;'>
                     <!-- Pills navs -->
-                    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-                        <li class="nav-item" role="presentation">
+                    <ul class='nav nav-pills nav-justified mb-3' id='ex1' role='tablist'>
+                        <li class='nav-item' role='presentation'>
                             <br>
-                            <a class="nav-link active" id="tab-login" data-mdb-toggle="pill"
-                                href="<?php echo base_url();?>index.php/login" role="tab" aria-controls="pills-login"
-                                aria-selected="true">Iniciar Sesión</a>
+                            <a class='nav-link' id='tab-login' data-mdb-toggle='pill'
+                                href='<?php echo base_url();?>index.php/login' role='tab' aria-controls='pills-login'
+                                aria-selected='false'>Iniciar Sesión</a>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <li class='nav-item' role='presentation'>
                             <br>
-                            <a class="nav-link" id="tab-register" data-mdb-toggle="pill"
-                                href="<?php echo base_url();?>index.php/register" role="tab"
-                                aria-controls="pills-register" aria-selected="false">Registrarse</a>
+                            <a class='nav-link active' id='tab-register' data-mdb-toggle='pill'
+                                href='<?php echo base_url();?>index.php/register' role='tab'
+                                aria-controls='pills-register' aria-selected='true'>Registrarse</a>
                         </li>
                     </ul>
                     <!-- Pills navs -->
 
                     <!-- Pills content -->
                     <div class="tab-content">
-                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
-                            aria-labelledby="tab-login">
+                        <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                             <form>
                                 <div class="text-center mb-3">
                                     <h5>Entre sus credenciales</h5>
-                                     <h6>(Si no tiene cuenta vaya a Registrarse)</h6>
+
                                 </div>
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
@@ -193,70 +192,58 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 </div> -->
                             </form>
                         </div>
-                        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+                        <div class='tab-pane fade show active' id='pills-register' role='tabpanel'
+                            aria-labelledby='tab-register'>
                             <form>
-                                <div class="text-center mb-3">
-                                    <p>Sign up with:</p>
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-google"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-github"></i>
-                                    </button>
+                                <div class='text-center mb-3'>
+                                    <h5>Proporcione sus datos</h5>
+                                    <br>
                                 </div>
 
-                                <p class="text-center">or:</p>
-
                                 <!-- Name input -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="registerName" class="form-control" />
-                                    <label class="form-label" for="registerName">Name</label>
+                                <div class='form-outline mb-4'>
+                                    <input type='text' id='registerName' class='form-control' />
+                                    <label class='form-label' for='registerName'>Nombre</label>
                                 </div>
 
                                 <!-- Username input -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="registerUsername" class="form-control" />
-                                    <label class="form-label" for="registerUsername">Username</label>
+                                <div class='form-outline mb-4'>
+                                    <input type='text' id='registerUsername' class='form-control' />
+                                    <label class='form-label' for='registerUsername'>Nombre de usuario</label>
                                 </div>
 
                                 <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <input type="email" id="registerEmail" class="form-control" />
-                                    <label class="form-label" for="registerEmail">Email</label>
+                                <div class='form-outline mb-4'>
+                                    <input type='email' id='registerEmail' class='form-control' />
+                                    <label class='form-label' for='registerEmail'>Correo</label>
                                 </div>
 
                                 <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="registerPassword" class="form-control" />
-                                    <label class="form-label" for="registerPassword">Password</label>
+                                <div class='form-outline mb-4'>
+                                    <input type='password' id='registerPassword' class='form-control' />
+                                    <label class='form-label' for='registerPassword'>Contraseña</label>
                                 </div>
 
                                 <!-- Repeat Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="registerRepeatPassword" class="form-control" />
-                                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                                <div class='form-outline mb-4'>
+                                    <input type='password' id='registerRepeatPassword' class='form-control' />
+                                    <label class='form-label' for='registerRepeatPassword'>Repita su contraseña</label>
                                 </div>
 
                                 <!-- Checkbox -->
-                                <div class="form-check d-flex justify-content-center mb-4">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck"
-                                        checked aria-describedby="registerCheckHelpText" />
-                                    <label class="form-check-label" for="registerCheck">
-                                        I have read and agree to the terms
+                                <div class='form-check d-flex justify-content-center mb-4'>
+                                    <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
+                                        checked aria-describedby='registerCheckHelpText' />
+                                    <label class='form-check-label' for='registerCheck'>
+                                        Estoy de acuerdo con los términos y condiciones
                                     </label>
                                 </div>
 
                                 <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+                                <div class="text-center">
+                                    <a href="<?php echo base_url();?>index.php/login" type="submit"
+                                        class="btn btn-primary btn-block mb-4">Registrar</a>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -264,8 +251,6 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 </div>
             </div>
         </section>
-
-
 
     </section>
 </body>
