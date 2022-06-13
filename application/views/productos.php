@@ -157,7 +157,6 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 <h4>Categorías</h4>
                             </div>
                             <div class='card' style='width: 16rem;'>
-                                <br>
                                 <div class='accordion accordion-flush' id='accordionFlushExample'>
                                     <div class='accordion-item'>
                                         <h2 class='accordion-header' id='flush-headingOne'>
