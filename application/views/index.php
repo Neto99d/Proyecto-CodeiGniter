@@ -13,7 +13,11 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
     <title>Interfaz Beta</title>
     <style>
-
+    @media (max-width: 600px) {
+        .carousel-item {
+            height: 280px;
+        }
+    }
     </style>
 </head>
 
@@ -25,7 +29,6 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <div class='container-fluid'>
                     <a class='navbar-brand' href='http://localhost/Proyecto-CodeiGniter/'>Interfaz Beta</a>
                     <div class='align-content-end'>
-
                         <ul class='nav-justified'>
                             <!--Mi CUENTA<-->
                             <a href='#' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Mi Cuenta'><svg
@@ -35,15 +38,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <path fill-rule='evenodd'
                                         d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
                                 </svg></a>
-                                <!--Mi Carrito<-->
-                            <a href="<?php echo base_url();?>index.php/carrito" data-bs-toggle='tooltip' data-bs-placement='bottom' title='Mi carrito'><svg
-                                    xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor'
-                                    class='bi bi-cart' viewBox='0 0 16 16'>
+                            <!--Mi Carrito<-->
+                            <a href="<?php echo base_url();?>index.php/carrito" data-bs-toggle='tooltip'
+                                data-bs-placement='bottom' title='Mi carrito'><svg xmlns='http://www.w3.org/2000/svg'
+                                    width='24' height='24' fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                     <path
                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                                 </svg></a>
-                                <!--Iniciar sesión<-->
-                            <a href="<?php echo base_url();?>index.php/login" data-bs-toggle='tooltip' data-bs-placement='bottom' title='Iniciar sesión'><svg
+                            <!--Iniciar sesión<-->
+                            <a href="<?php echo base_url();?>index.php/login" data-bs-toggle='tooltip'
+                                data-bs-placement='bottom' title='Iniciar sesión'><svg
                                     xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
                                     class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
@@ -51,7 +55,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <path fill-rule='evenodd'
                                         d='M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z' />
                                 </svg></a>
-                                <!--Cerrar sesión<-->
+                            <!--Cerrar sesión<-->
                             <a href='' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Cerrar sesión'><svg
                                     xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
                                     class='bi bi-box-arrow-right' viewBox='0 0 16 16'>
@@ -68,7 +72,12 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             <div class='header-bottom'>
                 <nav class='navbar navbar-expand-lg bg-light'>
                     <div class='container-fluid'>
-                        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
                                     <a href="" class='btn btn-outline-success me-2'>Inicio</a>
@@ -77,15 +86,17 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'
                                         type='button' data-bs-toggle='dropdown' aria-expanded='false'>Tienda</button>
                                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item' href="<?php echo base_url('index.php/productos');?>"><svg xmlns='http://www.w3.org/2000/svg'
-                                                    width='17' height='17' fill='currentColor' class='bi bi-bag-fill'
-                                                    viewBox='0 0 16 16'>
+                                        <li><a class='dropdown-item'
+                                                href="<?php echo base_url('index.php/productos');?>"><svg
+                                                    xmlns='http://www.w3.org/2000/svg' width='17' height='17'
+                                                    fill='currentColor' class='bi bi-bag-fill' viewBox='0 0 16 16'>
                                                     <path
                                                         d='M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z' />
                                                 </svg> Productos</a></li>
-                                        <li><a class='dropdown-item' href='<?php echo base_url('index.php/carrito');?>'><svg xmlns='http://www.w3.org/2000/svg'
-                                                    width='17' height='17' fill='currentColor' class='bi bi-cart'
-                                                    viewBox='0 0 16 16'>
+                                        <li><a class='dropdown-item'
+                                                href='<?php echo base_url('index.php/carrito');?>'><svg
+                                                    xmlns='http://www.w3.org/2000/svg' width='17' height='17'
+                                                    fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                                     <path
                                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                                                 </svg> Carrito</a></li>
@@ -143,14 +154,15 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="assets/images/R.jfif" class="rounded d-block w-100" alt="..." width="1200" height="470">
+                    <img src="assets/images/R.jfif" class="rounded d-block w-100" alt="First slide" width="1200"
+                        height="470">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="assets/images/R (1).jfif" class="rounded d-block w-100" alt="..." width="1200"
+                    <img src="assets/images/R (1).jfif" class="rounded d-block w-100" alt="Second slide" width="1200"
                         height="470">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
@@ -158,7 +170,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="assets/images/R (3).jfif" class="rounded d-block w-100" alt="..." width="1200"
+                    <img src="assets/images/R (3).jfif" class="rounded d-block w-100" alt="Third slide" width="1200"
                         height="470">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
@@ -337,9 +349,12 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         <div class='container'>
             <footer class='py-3 my-4'>
                 <ul class='nav justify-content-center border-bottom pb-3 mb-3'>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php');?>' class='nav-link px-2 text-muted'>Inicio</a></li>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php/productos');?>' class='nav-link px-2 text-muted'>Productos</a></li>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php/contacto');?>' class='nav-link px-2 text-muted'>Contacto</a></li>
+                    <li class='nav-item'><a href='<?php echo base_url('index.php');?>'
+                            class='nav-link px-2 text-muted'>Inicio</a></li>
+                    <li class='nav-item'><a href='<?php echo base_url('index.php/productos');?>'
+                            class='nav-link px-2 text-muted'>Productos</a></li>
+                    <li class='nav-item'><a href='<?php echo base_url('index.php/contacto');?>'
+                            class='nav-link px-2 text-muted'>Contacto</a></li>
                 </ul>
                 <p class='text-center text-muted'>&copy;
                     2022 Interfaz Beta</p>

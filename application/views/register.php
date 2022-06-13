@@ -69,10 +69,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             <div class='header-bottom'>
                 <nav class='navbar navbar-expand-lg bg-light'>
                     <div class='container-fluid'>
-                        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
-                                    <a href="<?php echo base_url('index.php');?>" class='btn btn-outline-success me-2'>Inicio</a>
+                                    <a href="<?php echo base_url('index.php');?>"
+                                        class='btn btn-outline-success me-2'>Inicio</a>
                                 </li>
                                 <li class='nav-item dropdown'>
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'
@@ -132,6 +138,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         </div>
 
     </header>
+    <!-- CONTENIDO <-->
     <section class='pb-4 '>
         <section class='w-100 p-4 d-flex justify-content-center pb-4'>
             <div class='bg-white justify-content-center border rounded-3'>
@@ -218,9 +225,12 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         <div class='container'>
             <footer class='py-3 my-4'>
                 <ul class='nav justify-content-center border-bottom pb-3 mb-3'>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php');?>' class='nav-link px-2 text-muted'>Inicio</a></li>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php/productos');?>' class='nav-link px-2 text-muted'>Productos</a></li>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php/contacto');?>' class='nav-link px-2 text-muted'>Contacto</a></li>
+                    <li class='nav-item'><a href='<?php echo base_url('index.php');?>'
+                            class='nav-link px-2 text-muted'>Inicio</a></li>
+                    <li class='nav-item'><a href='<?php echo base_url('index.php/productos');?>'
+                            class='nav-link px-2 text-muted'>Productos</a></li>
+                    <li class='nav-item'><a href='<?php echo base_url('index.php/contacto');?>'
+                            class='nav-link px-2 text-muted'>Contacto</a></li>
                 </ul>
                 <p class='text-center text-muted'>&copy;
                     2022 Interfaz Beta</p>
