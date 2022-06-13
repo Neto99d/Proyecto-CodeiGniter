@@ -148,37 +148,39 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                 </svg></h3>
             <br>
+            <div class="table-responsive">
+                <table class="table table-bordered justify-content-center">
+                    <thead>
+                        <tr>
+                            <th width="5%" scope="col">No.</th>
+                            <th width="25%" scope="col">Producto</th>
+                            <th width="10%" scope="col">Precio</th>
+                            <th width="22%" scope="col">Cantidad</th>
+                            <th width="10%" scope="col">Total</th>
+                            <th width="10%" scope="col">Eliminar</th>
 
-            <table class="table table-bordered justify-content-center">
-                <thead>
-                    <tr>
-                        <th width="5%" scope="col">No.</th>
-                        <th width="25%" scope="col">Producto</th>
-                        <th width="10%" scope="col">Precio</th>
-                        <th width="22%" scope="col">Cantidad</th>
-                        <th width="10%" scope="col">Total</th>
-                        <th width="10%" scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Producto</td>
+                            <td>60</td>
+                            <td>
+                                <form>
+                                    <input class="input-small" type="number" value="1">
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Producto</td>
-                        <td>60</td>
-                        <td>
-                            <form>
-                                <input class="input-small" type="number" value="1">
+                                    <a class="btn btn-outline-success" href="">Actualizar</a>
+                            </td>
+                            </form>
+                            </td>
+                            <td>@mdo</td>
+                            <td><a class="btn btn-outline-danger" href="">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                                <a class="btn btn-outline-success" href="">Actualizar</a>
-                        </td>
-                        </form>
-                        </td>
-                        <td>@mdo</td>
-                        <td><a class="btn btn-outline-danger" href="">Eliminar</a></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
     </section>
