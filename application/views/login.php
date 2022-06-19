@@ -209,6 +209,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             </p>
                         </div>
                         </form>
+                        <!--
                         <script>
                         <?php if (true) { ?>
                         
@@ -219,7 +220,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             timer: 1500
                         })
                         <?php }?>
-                        </script>
+                        </script> -->
                     </div>
                 </div>
             </div>
