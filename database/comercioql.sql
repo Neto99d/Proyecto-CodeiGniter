@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2022 a las 05:54:56
+-- Tiempo de generación: 19-06-2022 a las 06:31:45
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -58,7 +58,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `apellidos`, `username`, `telefono`, `direccion`, `email`, `password`, `estado`, `rol_id`) VALUES
-(8, 'Duva', 'Ernesto', 'admin@example.com', '056347996', 'admin@example.com', 'user@example.com', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL);
+(9, 'Duva', 'Ernesto', 'admin@example.com', '056347996', 'admin@example.com', 'user@example.com', 'admin', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -180,7 +180,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_venta`
