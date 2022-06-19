@@ -36,24 +36,23 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
                                 </svg></a>
                             <!--Mi Carrito<-->
-                            <a href="<?php echo base_url();?>index.php/carrito" data-bs-toggle='tooltip'
+                            <a href="<?php echo base_url();?>carrito" data-bs-toggle='tooltip'
                                 data-bs-placement='bottom' title='Mi carrito'><svg xmlns='http://www.w3.org/2000/svg'
                                     width='24' height='24' fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                     <path
                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                                 </svg></a>
                             <!--Iniciar sesión<-->
-                            <a href="<?php echo base_url();?>index.php/login" data-bs-toggle='tooltip'
-                                data-bs-placement='bottom' title='Iniciar sesión'><svg
-                                    xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
-                                    class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
+                            <a href="<?php echo base_url();?>login" data-bs-toggle='tooltip' data-bs-placement='bottom'
+                                title='Iniciar sesión'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'
+                                    fill='currentColor' class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
                                         d='M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z' />
                                     <path fill-rule='evenodd'
                                         d='M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z' />
                                 </svg></a>
                             <!--Cerrar sesión<-->
-                            <a href='' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Cerrar sesión'><svg
+                            <a href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Cerrar sesión'><svg
                                     xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
                                     class='bi bi-box-arrow-right' viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
@@ -77,22 +76,19 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
-                                    <a href="<?php echo base_url('index.php');?>"
-                                        class='btn btn-outline-success me-2'>Inicio</a>
+                                    <a href="<?php echo base_url('');?>" class='btn btn-outline-success me-2'>Inicio</a>
                                 </li>
                                 <li class='nav-item dropdown'>
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'
                                         type='button' data-bs-toggle='dropdown' aria-expanded='false'>Tienda</button>
                                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item'
-                                                href="<?php echo base_url('index.php/productos');?>"><svg
+                                        <li><a class='dropdown-item' href="<?php echo base_url('productos');?>"><svg
                                                     xmlns='http://www.w3.org/2000/svg' width='17' height='17'
                                                     fill='currentColor' class='bi bi-bag-fill' viewBox='0 0 16 16'>
                                                     <path
                                                         d='M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z' />
                                                 </svg> Productos</a></li>
-                                        <li><a class='dropdown-item'
-                                                href='<?php echo base_url('index.php/carrito');?>'><svg
+                                        <li><a class='dropdown-item' href='<?php echo base_url('carrito');?>'><svg
                                                     xmlns='http://www.w3.org/2000/svg' width='17' height='17'
                                                     fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                                     <path
@@ -101,7 +97,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         <li>
                                             <hr class='dropdown-divider'>
                                         </li>
-                                        <li><a class='dropdown-item' href="<?php echo base_url();?>index.php/login"><svg
+                                        <li><a class='dropdown-item' href="<?php echo base_url();?>login"><svg
                                                     xmlns='http://www.w3.org/2000/svg' width='17' height='17'
                                                     fill='currentColor' class='bi bi-box-arrow-in-right'
                                                     viewBox='0 0 16 16'>
@@ -121,7 +117,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         title="Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.">Recomendaciones</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <a href="<?php echo base_url('index.php/contacto');?>"
+                                    <a href="<?php echo base_url('contacto');?>"
                                         class='btn btn-outline-success me-2'>Contacto</a>
                                 </li>
                             </ul>
@@ -148,20 +144,20 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <li class='nav-item' role='presentation'>
                             <br>
                             <a class='nav-link' id='tab-login' data-mdb-toggle='pill'
-                                href='<?php echo base_url();?>index.php/login' role='tab' aria-controls='pills-login'
+                                href='<?php echo base_url();?>login' role='tab' aria-controls='pills-login'
                                 aria-selected='false'>Iniciar Sesión</a>
                         </li>
                         <li class='nav-item' role='presentation'>
                             <br>
                             <a class='nav-link active' id='tab-register' data-mdb-toggle='pill'
-                                href='<?php echo base_url();?>index.php/register' role='tab'
-                                aria-controls='pills-register' aria-selected='true'>Registrarse</a>
+                                href='<?php echo base_url();?>register' role='tab' aria-controls='pills-register'
+                                aria-selected='true'>Registrarse</a>
                         </li>
                     </ul>
                     <!-- Pills navs -->
                     <div class='tab-pane fade show active' id='pills-register' role='tabpanel'
                         aria-labelledby='tab-register'>
-                        <form>
+                        <form action="<?php echo base_url('user/create');?>" method="POST">
                             <div class='text-center mb-3'>
                                 <h5>Proporcione sus datos</h5>
                                 <br>
@@ -169,32 +165,47 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                             <!-- Name input -->
                             <div class='form-outline mb-4'>
-                                <input type='text' id='registerName' class='form-control' />
-                                <label class='form-label' for='registerName'>Nombre</label>
+                                <input type='text' name="nombre" id='nombre' class='form-control' />
+                                <label class='form-label' for='nombre'>Nombre</label>
+                            </div>
+
+                            <div class='form-outline mb-4'>
+                                <input type='text' name="apellidos" id='apellidos' class='form-control' />
+                                <label class='form-label' for='apellidos'>Apellidos</label>
                             </div>
 
                             <!-- Username input -->
                             <div class='form-outline mb-4'>
-                                <input type='text' id='registerUsername' class='form-control' />
-                                <label class='form-label' for='registerUsername'>Nombre de usuario</label>
+                                <input type='text' name="username" id='username' class='form-control' />
+                                <label class='form-label' for='username'>Nombre de usuario</label>
                             </div>
 
                             <!-- Email input -->
                             <div class='form-outline mb-4'>
-                                <input type='email' id='registerEmail' class='form-control' />
-                                <label class='form-label' for='registerEmail'>Correo</label>
+                                <input type='email' name="email" id='email' class='form-control' />
+                                <label class='form-label' for='email'>Correo</label>
+                            </div>
+
+                            <div class='form-outline mb-4'>
+                                <input type='number' name="telefono" id='telefono' class='form-control' />
+                                <label class='form-label' for='telefono'>Teléfono</label>
+                            </div>
+
+                            <div class='form-outline mb-4'>
+                                <input type='text' name="direccion" id='direccion' class='form-control' />
+                                <label class='form-label' for='direccion'>Dirección</label>
                             </div>
 
                             <!-- Password input -->
                             <div class='form-outline mb-4'>
-                                <input type='password' id='registerPassword' class='form-control' />
-                                <label class='form-label' for='registerPassword'>Contraseña</label>
+                                <input type='password' name="password" id='password' class='form-control' />
+                                <label class='form-label' for='password'>Contraseña</label>
                             </div>
 
                             <!-- Repeat Password input -->
                             <div class='form-outline mb-4'>
-                                <input type='password' id='registerRepeatPassword' class='form-control' />
-                                <label class='form-label' for='registerRepeatPassword'>Repita su contraseña</label>
+                                <input type='password' id='repeatpassword'  name="repeatpassword" class='form-control' />
+                                <label class='form-label' for='repeatpassword'>Repita su contraseña</label>
                             </div>
 
                             <!-- Checkbox -->
@@ -208,8 +219,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                             <!-- Submit button -->
                             <div class="text-center">
-                                <a href="<?php echo base_url();?>index.php/login" type="submit"
-                                    class="btn btn-primary btn-block mb-4">Registrar</a>
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Registrar</button>
                             </div>
                         </form>
                     </div>
@@ -225,11 +235,11 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         <div class='container'>
             <footer class='py-3 my-4'>
                 <ul class='nav justify-content-center border-bottom pb-3 mb-3'>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php');?>'
+                    <li class='nav-item'><a href='<?php echo base_url('');?>'
                             class='nav-link px-2 text-muted'>Inicio</a></li>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php/productos');?>'
+                    <li class='nav-item'><a href='<?php echo base_url('productos');?>'
                             class='nav-link px-2 text-muted'>Productos</a></li>
-                    <li class='nav-item'><a href='<?php echo base_url('index.php/contacto');?>'
+                    <li class='nav-item'><a href='<?php echo base_url('contacto');?>'
                             class='nav-link px-2 text-muted'>Contacto</a></li>
                 </ul>
                 <p class='text-center text-muted'>&copy;

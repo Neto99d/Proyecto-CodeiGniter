@@ -60,4 +60,7 @@ $route['register'] = 'welcome/register';
 $route['carrito'] = 'welcome/carrito';
 $route['productos'] = 'welcome/productos';
 $route['contacto'] = 'welcome/contacto';
+$route['user'] = 'welcome/user/create';
+$route['user'] = 'welcome/user/login';
+$route['user'] = 'welcome/user/logout';
 

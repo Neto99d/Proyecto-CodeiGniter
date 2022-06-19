@@ -66,7 +66,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <div class='collapse navbar-collapse' id='navbarSupportedContent'>
                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
-                                    <a href="<?php echo base_url();?>index.php" class='btn btn-outline-success me-2'>Inicio</a>
+                                    <a href="<?php echo base_url();?>" class='btn btn-outline-success me-2'>Inicio</a>
                                 </li>
                                 <li class='nav-item dropdown'>
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'

@@ -19,9 +19,15 @@ class Register extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model("Usuarios_model", 'um');
+	}
+
 	public function index()
 	{
 		$this->load->view('register');
 
 	}
+
 }
