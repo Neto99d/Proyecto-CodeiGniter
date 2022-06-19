@@ -52,9 +52,10 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         d='M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z' />
                                 </svg></a>
                             <!--Cerrar sesión<-->
-                            <a href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Cerrar sesión'><svg
-                                    xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
-                                    class='bi bi-box-arrow-right' viewBox='0 0 16 16'>
+                            <a href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip'
+                                data-bs-placement='bottom' title='Cerrar sesión'><svg xmlns='http://www.w3.org/2000/svg'
+                                    width='25' height='25' fill='currentColor' class='bi bi-box-arrow-right'
+                                    viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
                                         d='M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z' />
                                     <path fill-rule='evenodd'
@@ -165,53 +166,54 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                             <!-- Name input -->
                             <div class='form-outline mb-4'>
-                                <input type='text' name="nombre" id='nombre' class='form-control' />
+                                <input type='text' name="nombre" id='nombre' class='form-control' required />
                                 <label class='form-label' for='nombre'>Nombre</label>
                             </div>
 
                             <div class='form-outline mb-4'>
-                                <input type='text' name="apellidos" id='apellidos' class='form-control' />
+                                <input type='text' name="apellidos" id='apellidos' class='form-control' required />
                                 <label class='form-label' for='apellidos'>Apellidos</label>
                             </div>
 
                             <!-- Username input -->
                             <div class='form-outline mb-4'>
-                                <input type='text' name="username" id='username' class='form-control' />
+                                <input type='text' name="username" id='username' class='form-control' required />
                                 <label class='form-label' for='username'>Nombre de usuario</label>
                             </div>
 
                             <!-- Email input -->
                             <div class='form-outline mb-4'>
-                                <input type='email' name="email" id='email' class='form-control' />
+                                <input type='email' name="email" id='email' class='form-control' required />
                                 <label class='form-label' for='email'>Correo</label>
                             </div>
 
                             <div class='form-outline mb-4'>
-                                <input type='number' name="telefono" id='telefono' class='form-control' />
+                                <input type='tel' name="telefono" id='telefono' class='form-control' maxlength="8" required />
                                 <label class='form-label' for='telefono'>Teléfono</label>
                             </div>
 
                             <div class='form-outline mb-4'>
-                                <input type='text' name="direccion" id='direccion' class='form-control' />
+                                <input type='text' name="direccion" id='direccion' class='form-control' required />
                                 <label class='form-label' for='direccion'>Dirección</label>
                             </div>
 
                             <!-- Password input -->
                             <div class='form-outline mb-4'>
-                                <input type='password' name="password" id='password' class='form-control' />
+                                <input type='password' name="password" id='password' class='form-control' minlength="4" required />
                                 <label class='form-label' for='password'>Contraseña</label>
                             </div>
 
                             <!-- Repeat Password input -->
                             <div class='form-outline mb-4'>
-                                <input type='password' id='repeatpassword'  name="repeatpassword" class='form-control' />
+                                <input type='password' id='repeatpassword' name="repeatpassword" class='form-control'
+                                    required />
                                 <label class='form-label' for='repeatpassword'>Repita su contraseña</label>
                             </div>
 
                             <!-- Checkbox -->
                             <div class='form-check d-flex justify-content-center mb-4'>
-                                <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck' checked
-                                    aria-describedby='registerCheckHelpText' />
+                                <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
+                                    required aria-describedby='registerCheckHelpText' />
                                 <label class='form-check-label' for='registerCheck'>
                                     Estoy de acuerdo con los términos y condiciones
                                 </label>

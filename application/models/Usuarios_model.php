@@ -23,11 +23,14 @@ class Usuarios_model extends CI_Model {
 	} 
 
 	public function login($username, $password){
-		$this->db->where("username", $username);
-		$this->db->where("password", $password);
-
-		$resultados = $this->db->get("usuarios");
-		if ($resultados->num_rows() > 0) {
+		
+		$this->db->select('*');
+		$this->db->from('clientes');
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+		$this->db->limit(1);
+		$resultados = $this->db->get();
+		if ($resultados->num_rows() == 1) {
 			return $resultados->row();
 		}
 		else{

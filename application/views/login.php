@@ -8,9 +8,11 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src="<?= base_url().'assets/js/sweetalert2.min.js' ?>"></script>
     <script src="<?= base_url().'assets/Jquery/jquery-3.6.0.min.js'?>"></script>
     <script src="<?= base_url().'assets/js/bootstrap.bundle.min.js' ?>"></script>
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
+    <link rel='stylesheet' href="<?= base_url().'assets/css/sweetalert2.min.css'?>">
     <title>Interfaz Beta</title>
     <style>
 
@@ -43,19 +45,19 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                                 </svg></a>
                             <!--Iniciar sesión<-->
-                            <a href="<?php echo base_url();?>login" data-bs-toggle='tooltip'
-                                data-bs-placement='bottom' title='Iniciar sesión'><svg
-                                    xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
-                                    class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
+                            <a href="<?php echo base_url();?>login" data-bs-toggle='tooltip' data-bs-placement='bottom'
+                                title='Iniciar sesión'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'
+                                    fill='currentColor' class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
                                         d='M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z' />
                                     <path fill-rule='evenodd'
                                         d='M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z' />
                                 </svg></a>
                             <!--Cerrar sesión<-->
-                            <a href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Cerrar sesión'><svg
-                                    xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor'
-                                    class='bi bi-box-arrow-right' viewBox='0 0 16 16'>
+                            <a href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip'
+                                data-bs-placement='bottom' title='Cerrar sesión'><svg xmlns='http://www.w3.org/2000/svg'
+                                    width='25' height='25' fill='currentColor' class='bi bi-box-arrow-right'
+                                    viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
                                         d='M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z' />
                                     <path fill-rule='evenodd'
@@ -77,22 +79,19 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                                 <li class='nav-item'>
-                                    <a href="<?php echo base_url('');?>"
-                                        class='btn btn-outline-success me-2'>Inicio</a>
+                                    <a href="<?php echo base_url('');?>" class='btn btn-outline-success me-2'>Inicio</a>
                                 </li>
                                 <li class='nav-item dropdown'>
                                     <button class='btn btn-outline-success me-2 dropdown-toggle' id='navbarDropdown'
                                         type='button' data-bs-toggle='dropdown' aria-expanded='false'>Tienda</button>
                                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item'
-                                                href="<?php echo base_url('productos');?>"><svg
+                                        <li><a class='dropdown-item' href="<?php echo base_url('productos');?>"><svg
                                                     xmlns='http://www.w3.org/2000/svg' width='17' height='17'
                                                     fill='currentColor' class='bi bi-bag-fill' viewBox='0 0 16 16'>
                                                     <path
                                                         d='M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z' />
                                                 </svg> Productos</a></li>
-                                        <li><a class='dropdown-item'
-                                                href='<?php echo base_url('carrito');?>'><svg
+                                        <li><a class='dropdown-item' href='<?php echo base_url('carrito');?>'><svg
                                                     xmlns='http://www.w3.org/2000/svg' width='17' height='17'
                                                     fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                                     <path
@@ -154,8 +153,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <li class="nav-item" role="presentation">
                             <br>
                             <a class="nav-link" id="tab-register" data-mdb-toggle="pill"
-                                href="<?php echo base_url();?>register" role="tab"
-                                aria-controls="pills-register" aria-selected="false">Registrarse</a>
+                                href="<?php echo base_url();?>register" role="tab" aria-controls="pills-register"
+                                aria-selected="false">Registrarse</a>
                         </li>
                     </ul>
                     <!-- Pills navs -->
@@ -164,53 +163,67 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
                             aria-labelledby="tab-login">
+
                             <form action="<?php echo base_url('user/login');?>" method="POST">
                                 <div class="text-center mb-3">
                                     <h5>Entre sus credenciales</h5>
                                 </div>
-                                <!-- Email input -->
+                                <!-- Email input type="email" -->
                                 <div class="form-outline mb-4">
-                                    <input type="email" name="username" id="username" class="form-control" />
+                                    <input name="username" id="username" class="form-control" required />
                                     <label class="form-label" for="username">Correo o nombre de usuario</label>
                                 </div>
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="password" name="password" id="password" class="form-control" />
+                                    <input type="password" name="password" id="password" class="form-control"
+                                        required />
                                     <label class="form-label" for="password">Contraseña</label>
                                 </div>
 
-                                <!-- 2 column grid layout -->
+                                <!-- 2 column grid layout 
                                 <div class="row mb-4">
                                     <div class="col-md-6 d-flex justify-content-center">
-                                        <!-- Checkbox -->
-                                        <div class="form-check mb-3 mb-md-0">
+                                         Checkbox -->
+                                <!-- <div class="form-check mb-3 mb-md-0">
                                             <input class="form-check-input" type="checkbox" value="" id="loginCheck"
                                                 checked />
                                             <label class="form-check-label" for="loginCheck"> Recordarme </label>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <!--   <div class="col-md-6 d-flex justify-content-center">
+                                <!--   <div class="col-md-6 d-flex justify-content-center">
                                         Simple link 
                                         <a href="#!">Forgot password?</a>
                                     </div>-->
-                                </div>
-
-                                <!-- Submit button -->
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
-                                </div>
-
-                                <div class="text-center">
-                                    <p>¿Aún no tienes cuenta? <br>
-                                        <a href="<?php echo base_url();?>register">Registrarse</a>
-                                    </p>
-                                </div>
-                            </form>
                         </div>
+
+                        <!-- Submit button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
+                        </div>
+
+                        <div class="text-center">
+                            <p>¿Aún no tienes cuenta? <br>
+                                <a href="<?php echo base_url();?>register">Registrarse</a>
+                            </p>
+                        </div>
+                        </form>
+                        <script>
+                        <?php if (true) { ?>
+                        
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Exito',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        <?php }?>
+                        </script>
                     </div>
                 </div>
+            </div>
+
         </section>
 
 
@@ -233,6 +246,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             </footer>
         </div>
     </footer>
+
 </body>
 
 </html>

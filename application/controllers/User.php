@@ -22,8 +22,10 @@ class User extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("Usuarios_model");
+		$this->load->library('session');	
 	}
 
+    
  // md5($_POST['password'])
 	public function create(){
 		extract($_POST);
@@ -35,30 +37,52 @@ class User extends CI_Controller {
 		}
 	}
 
-    /*public function login(){
-        $username = $this->input->post("username");
-		$password = $this->input->post("password");
+    public function login(){
+        extract($_POST);
 		$res = $this->Usuarios_model->login($username, $password);
-
-		if (!$res) {
-			//$this->session->set_flashdata("error","El usuario y/o contraseña son incorrectos");
-			redirect(base_url()."login");
-		}
-		else{
+		if ($res != NULL) {
 			$data  = array(
 				'id' => $res->id, 
 				'nombre' => $res->nombre,
-				'login' => TRUE
+				'logged_in' => TRUE
 			);
 			$this->session->set_userdata($data);
+			
 			redirect(base_url());
+			
 		}
-	}*/
+		else if (!$this->session->has_userdata("id")) {
+				# Poner un mensaje de inicio de sesión
+				$this->session->set_flashdata('mensaje', 'Error');
+				$this->session->mark_as_flash('nombre');
+				
+				# Y redireccionar al login
+				redirect(base_url()."login");
+			
+			// redirect(base_url()."login");
+		}
+	}
 
-	/*public function logout(){
-            redirect(base_url());
-        
-		$this->session->sess_destroy();
+    public function is_logueado()
+	{
+		if (!$this->session->has_userdata("id")) {
+			# Poner un mensaje de inicio de sesión
+			$this->session->set_flashdata('mensaje', 'Error');
+			# Y redireccionar al login
+			redirect(base_url()."login");
+		    return false;
+		// redirect(base_url()."login");
+		}
+		else {
+			return true;
+		}
+
+	}
+
+	public function logout(){
+            
+		session_unset();
+		session_destroy();
 		redirect(base_url());
-	}*/
+	}
 }
