@@ -27,13 +27,14 @@ class User extends CI_Controller {
 
     
  // md5($_POST['password'])
+ // Crear usuario
 	public function create(){
 		extract($_POST);
         if ($this->Usuarios_model->save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password)) {
-			redirect(base_url()."login");
+			redirect(base_url()."login", 'refresh');
 		}
 		else{
-			redirect(base_url()."register");
+			redirect(base_url()."register", 'refresh');
 		}
 	}
 
@@ -48,28 +49,28 @@ class User extends CI_Controller {
 			);
 			$this->session->set_userdata($data);
 			
-			redirect(base_url());
+			redirect(base_url(), 'refresh');
 			
 		}
 		else if (!$this->session->has_userdata("id")) {
-				# Poner un mensaje de inicio de sesión
-				$this->session->set_flashdata('mensaje', 'Error');
-				$this->session->mark_as_flash('nombre');
+				# Poner un mensaje de inicio de sesión NO FUNCIONA
+				$this->session->keep_flashdata('mensaje', 'Error');
+				$this->session->mark_as_flash('mensaje');
 				
 				# Y redireccionar al login
-				redirect(base_url()."login");
+				redirect(base_url()."login", 'refresh');
 			
 			// redirect(base_url()."login");
 		}
 	}
 
-    public function is_logueado()
+    public function is_logueado() // PENDIENTE DE PROBAR
 	{
 		if (!$this->session->has_userdata("id")) {
 			# Poner un mensaje de inicio de sesión
 			$this->session->set_flashdata('mensaje', 'Error');
 			# Y redireccionar al login
-			redirect(base_url()."login");
+			redirect(base_url()."login", 'refresh');
 		    return false;
 		// redirect(base_url()."login");
 		}
@@ -83,6 +84,6 @@ class User extends CI_Controller {
             
 		session_unset();
 		session_destroy();
-		redirect(base_url());
+		redirect(base_url(), 'refresh');
 	}
 }
