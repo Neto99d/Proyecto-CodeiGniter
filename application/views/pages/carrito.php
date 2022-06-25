@@ -18,7 +18,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 </head>
 
 <body>
-  
+
     <section>
         <!--Tabla de Carrito<-->
         <div class="container-fluid">
@@ -29,6 +29,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                 </svg></h3>
             <br>
+
             <div class="table-responsive">
                 <table class="table table-bordered justify-content-center">
                     <thead>
@@ -43,28 +44,55 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         </tr>
                     </thead>
                     <tbody>
+
+                        <?php if ($this->cart->total_items() <= 0):?>
+
+                        <h4>Su carrito esta vacío</h4>
+                        <?php endif; ?>
                         <!--EJEMPLO<-->
+                        <?php foreach ($cartItems as $items): ?>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Cosas</td>
-                            <td>60</td>
+                            <td>
+                                <?php echo $items['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $items['price']; ?>
+                            </td>
                             <td>
                                 <form>
-                                    <input class="input-small" type="number" value="1">
+                                    <input id="cantidad" class="input-small" type="number"
+                                        value=<?php echo $items['qty']; ?>
+                                        onchange="updateCartItem(this, '<?php echo $items['rowid']; ?>')">
 
-                                    <a class="btn btn-outline-success" href="">Actualizar</a>
+
+                                    <a class="btn btn-outline-success"
+                                        href="<?= base_url('carrito')?>">Actualizar</a>
                             </td>
                             </form>
                             </td>
-                            <td>@mdo</td>
-                            <td><a class="btn btn-outline-danger" href="">Eliminar</a></td>
+                            <td>$
+                                <?php echo $this->cart->format_number($this->cart->total()); ?>
+                            </td>
+                            <td><a class="btn btn-outline-danger"
+                                    href="<?= base_url('carrito/deleteCart/').$items['rowid']?>">Eliminar</a></td>
                         </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
 
         </div>
+        <script>
 
+            // Una funcion que se encarga de obtener los valores del input y por metodo get llamar a la direccion del metodo que actualiza los datos y le pasa los parametros
+        function updateCartItem(obj, rowid) {
+            $.get("<?php echo base_url('carrito/updateCart/'); ?>", {
+                rowid: rowid,
+                qty: obj.value
+            });
+        }
+        </script>
     </section>
 </body>
 

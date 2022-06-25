@@ -34,40 +34,44 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <div class='container-fluid'>
                             <div class='container-fluid align-center'>
                                 <br>
-                                <h4><?php print_r($catProd)?></h4>
+                                <h4>Categorías</h4>
                             </div>
                             <div class='card' style='width: 16rem;'>
-                            <?php foreach($catProd as $row): ?>
                                 <div class='accordion accordion-flush' id='accordionFlushExample'>
                                     <div class='accordion-item'>
-                                        <h2 class='accordion-header' id='flush-headingOne'>
-                                           
+                                        <?php foreach($catProd as $row): ?>
+                                        <h2 class='accordion-header' id='flush-headingOne<?php echo $row->id ?>'>
                                             <button class='accordion-button collapsed' type='button'
-                                                data-bs-toggle='collapse' data-bs-target='#flush-collapseOne'
+                                                data-bs-toggle='collapse'
+                                                data-bs-target='#flush-collapseOne<?php echo $row->id ?>'
                                                 aria-expanded='false' aria-controls='flush-collapseOne'>
-                                                <?php echo $row['nombrec']?> </button>
+                                                <?php echo $row->nombre?> </button>
                                         </h2>
-                                        <div id='flush-collapseOne' class='accordion-collapse collapse'
-                                            aria-labelledby='flush-headingOne' data-bs-parent='#accordionFlushExample'>
+                                        <div id='flush-collapseOne<?php echo $row->id ?>'
+                                            class='accordion-collapse collapse'
+                                            aria-labelledby='flush-headingOne<?php echo $row->id ?>'
+                                            data-bs-parent='#accordionFlushExample'>
                                             <div class='accordion-body'>
                                                 <div class='bd-example'>
                                                     <div class='btn-group-vertical' role='group'
                                                         aria-label='Vertical button group'>
-                                                        <?php foreach($catProd as $row): ?>
-                                                          
-                                                        <button type='button' class='btn btn-primary'><?php echo $row['nombrep'] ?></button>
+                                                        <?php foreach($row->productos as $r): ?>
+
+                                                        <button type='button'
+                                                            class='btn btn-primary'><?php echo $r->nombrep ?></button>
                                                         <?php endforeach; ?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <?php endforeach; ?>
+                                    </div>                                   
                                 </div>
-                                <?php endforeach; ?>
+
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <!--PRODUCTOS<  
                   esto va en div prod  class="col-sm-5 offset-sm-2 col-md-9 offset-md-0"
             -->
@@ -75,9 +79,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <div id="prod" class="col-sm-5 offset-sm-2 col-md-9 offset-md-0">
                     <div class='features_items'>
                         <h4 class="title text-center">Productos</h4>
-                        <br>
+                    
                         <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <?php foreach($productos as $row): ?>
+                            <?php foreach($productos as $row): ?>
                             <div class="col">
                                 <div class='card h-100'>
                                     <img src='...' class='card-img-top' alt='...'>

@@ -31,10 +31,10 @@ class User extends CI_Controller {
 	public function create(){
 		extract($_POST);
         if ($this->Usuarios_model->save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password)) {
-			redirect(base_url()."login", 'refresh');
+			redirect(base_url()."login");
 		}
 		else{
-			redirect(base_url()."register", 'refresh');
+			redirect(base_url()."register");
 		}
 	}
 
@@ -49,7 +49,7 @@ class User extends CI_Controller {
 			);
 			$this->session->set_userdata($data);
 			
-			redirect(base_url(), 'refresh');
+			redirect(base_url());
 			
 		}
 		else if (!$this->session->has_userdata("id")) {
@@ -58,7 +58,7 @@ class User extends CI_Controller {
 				$this->session->mark_as_flash('mensaje');
 				
 				# Y redireccionar al login
-				redirect(base_url()."login", 'refresh');
+				redirect(base_url()."login");
 			
 			// redirect(base_url()."login");
 		}
