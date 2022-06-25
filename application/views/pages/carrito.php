@@ -94,6 +94,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <br>
+                <h5>Importe Total: $<?php echo $this->cart->format_number($this->cart->total()); ?></h5>
             </div>
 
         </div>

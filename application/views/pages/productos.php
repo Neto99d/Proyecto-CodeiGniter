@@ -88,7 +88,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <div class='card-body'>
                                         <h5 class='card-title'><?php echo $row->nombre ?></h5>
                                         <p class='card-text'><?php echo $row->descripcion ?></p>
-                                        <a href="#" class="btn btn-primary">Agregar <svg
+                                        <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar <svg
                                                 xmlns='http://www.w3.org/2000/svg' width='20' height='20'
                                                 fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                                 <path
