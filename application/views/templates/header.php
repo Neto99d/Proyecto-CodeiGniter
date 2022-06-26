@@ -12,7 +12,11 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <script src="<?= base_url().'assets/js/bootstrap.bundle.min.js' ?>"></script>
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
     <title>Interfaz Beta</title>
-   
+    <style>
+    div.titulo{
+        text-align: center;
+    }
+    </style>
 </head>
 
 <body>
@@ -21,26 +25,44 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         <div class='container-fluid-full'>
             <nav class='navbar bg-light'>
                 <div class='container-fluid'>
-                    <a class='navbar-brand' href='<?php echo base_url();?>'>Interfaz Beta</a>
+                    <!--Mi CUENTA<-->
+                    <?php if ($this->session->tempdata('logged_in')):?>
+                    <h4 id="userProfile">
+                        <small><?php echo $this->session->tempdata('nombre'). " ";?><?php echo $this->session->tempdata('apellidos'). " ";?><svg
+                                xmlns='http://www.w3.org/2000/svg' width='21' height='21' fill='currentColor'
+                                class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
+                                <path fill-rule='evenodd'
+                                    d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
+                            </svg></small>
+                    </h4>
+
+                    <?php 
+                                endif;?>
+                    <div class="justify-content-center">
+                        <h4 id="tituloWeb">Interfaz Beta</h4>
+                    </div>
+
                     <div class='align-content-end'>
-                        <ul class='nav-justified'>
-                            <!--Mi CUENTA<-->
-                            
-                            <a href='#' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Mi Cuenta'><svg
-                                    xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor'
-                                    class='bi bi-person-circle' viewBox='0 0 16 16'>
-                                    <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
-                                    <path fill-rule='evenodd'
-                                        d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
-                                </svg></a>
+
+                        <ul class='nav-justified '>
                             <!--Mi Carrito<-->
+                            <?php if (count($this->cart->contents()) <= 0):?>
+
+                            <?php elseif (count($this->cart->contents()) > 0):?>
+
                             <a href='<?php echo base_url();?>carrito' data-bs-toggle='tooltip'
                                 data-bs-placement='bottom' title='Mi carrito'><svg xmlns='http://www.w3.org/2000/svg'
                                     width='24' height='24' fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                     <path
                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                                 </svg></a>
+                            <a>(<?php echo count($this->cart->contents());?>)</a>
+                            <?php 
+                                endif;?>
+
                             <!--Iniciar sesión<-->
+                            <?php if (!$this->session->tempdata('logged_in')):?>
                             <a href='<?php echo base_url();?>login' data-bs-toggle='tooltip' data-bs-placement='bottom'
                                 title='Iniciar sesión'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'
                                     fill='currentColor' class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
@@ -49,7 +71,10 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <path fill-rule='evenodd'
                                         d='M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z' />
                                 </svg></a>
+                            <?php 
+                                endif;?>
                             <!--Cerrar sesión<-->
+                            <?php if ($this->session->tempdata('logged_in')):?>
                             <a aria-disabled="" href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip'
                                 data-bs-placement='bottom' title='Cerrar sesión'><svg xmlns='http://www.w3.org/2000/svg'
                                     width='25' height='25' fill='currentColor' class='bi bi-box-arrow-right'
@@ -59,6 +84,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <path fill-rule='evenodd'
                                         d='M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z' />
                                 </svg></a>
+                            <?php 
+                                endif;?>
                         </ul>
 
                     </div>
@@ -92,7 +119,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                     fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                                     <path
                                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
-                                                </svg> Carrito</a></li>
+                                                </svg> Carrito</a>
+                                        </li>
                                         <li>
                                             <hr class='dropdown-divider'>
                                         </li>
@@ -110,11 +138,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 <!-- <li class = 'nav-item'>
 <button class = 'btn btn-outline-success me-2' type = 'button'>Administración</button>
 </li><-->
-                                <li class='nav-item'>
-                                    <a href='' class='btn btn-outline-success me-2' data-bs-toggle='tooltip'
-                                        data-bs-placement='bottom'
-                                        title='Un análisis de mercado para usted, lo que facilita la búsqueda de mejores productos y precios.'>Recomendaciones</a>
-                                </li>
+
                                 <li class='nav-item'>
                                     <a href="<?php echo base_url('contacto');?>"
                                         class='btn btn-outline-success me-2'>Contacto</a>
@@ -132,7 +156,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
         </div>
 
-    </header> 
+    </header>
 
 </body>
 

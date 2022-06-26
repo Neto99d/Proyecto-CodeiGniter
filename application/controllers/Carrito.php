@@ -40,9 +40,28 @@ class Carrito extends CI_Controller {
       );
 
       $this->cart->insert( $data );
-      redirect( base_url().'carrito');
+      redirect( base_url(),'refresh');
 
   }
+
+  public function AddCart_PageProd($id) {
+
+     
+    $product = $this->prod->get_ProductoID( $id );
+    
+   
+    $data = array(
+        'id'      => $product->id,
+        'qty'  => $product->disponible,
+        'price'   => $product->precio,
+        'name'     => $product->nombre
+
+    );
+
+    $this->cart->insert( $data );
+    redirect( base_url().'productos','refresh');
+
+}
   
   public function updateCart()
   {

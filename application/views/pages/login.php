@@ -15,12 +15,14 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <link rel='stylesheet' href="<?= base_url().'assets/css/sweetalert2.min.css'?>">
     <title>Interfaz Beta</title>
     <style>
-
+   #error{
+       color: red;
+   }
     </style>
 </head>
 
 <body>
-   
+
     <!-- CONTENIDO <-->
     <section class="pb-4 ">
         <section class="w-100 p-4 d-flex justify-content-center pb-4">
@@ -50,7 +52,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                             <form action="<?php echo base_url('user/login');?>" method="POST">
                                 <div class="text-center mb-3">
+
                                     <h5>Entre sus credenciales</h5>
+                                    <h5 id="error"><small><?php echo $this->session->flashdata('mensaje');?></small></h5>
                                 </div>
                                 <!-- Email input type="email" -->
                                 <div class="form-outline mb-4">
@@ -114,7 +118,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
 
     </section>
-   
+
 </body>
 
 </html>

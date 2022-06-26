@@ -25,7 +25,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             if (resp == 'ok') {
                 location.reload();
             } else {
-                alert('Hubo un fallo al actualizar');
+
+                alert('Un momento de fallo al actualizar, refrescando pagina para hacer los cambios');
+                location.reload();
             }
         });
     }
@@ -72,7 +74,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 <?php echo $items['name']; ?>
                             </td>
                             <td>
-                                <?php echo $items['price']; ?>
+                                $<?php echo $items['price']; ?>
                             </td>
                             <td>
                                 <form>
@@ -80,7 +82,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         value=<?php echo $items['qty']; ?>>
 
                                     <button class="btn btn-outline-success"
-                                        onclick="updateCartItem(cantidad, '<?php echo $items['rowid']; ?>')">Actualizar</button>
+                                        onclick="updateCartItem(cantidad, '<?php echo $items['rowid'] ?>'), location.reload()">Actualizar</button>
 
                                 </form>
                             </td>
@@ -96,6 +98,20 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 </table>
                 <br>
                 <h5>Importe Total: $<?php echo $this->cart->format_number($this->cart->total()); ?></h5>
+                <br>
+                <br>
+                <?php if ($this->session->tempdata('logged_in')):?>
+
+
+                <button class="btn btn-outline-success">Efectuar Compra</button>
+
+                <?php else: ?>
+
+                <button class="btn btn-outline-success disabled">Efectuar Compra</button><br>
+                <small>Inicie sesión para comprar</small>
+                <?php 
+                    endif;?>
+
             </div>
 
         </div>

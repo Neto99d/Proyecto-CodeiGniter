@@ -27,6 +27,7 @@ class Usuarios_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('clientes');
 		$this->db->where('username', $username);
+		$this->db->or_where('email', $username);
 		$this->db->where('password', $password);
 		$this->db->limit(1);
 		$resultados = $this->db->get();

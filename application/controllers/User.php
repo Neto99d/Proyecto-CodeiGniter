@@ -45,39 +45,26 @@ class User extends CI_Controller {
 			$data  = array(
 				'id' => $res->id, 
 				'nombre' => $res->nombre,
+				'apellidos' => $res->apellidos,
 				'logged_in' => TRUE
 			);
 			$this->session->set_userdata($data);
-			
+			$tempdata = array('nombre' => $data['nombre'],'apellidos' => $res->apellidos,'logged_in' => TRUE);
+			$this->session->set_tempdata($tempdata, null, 90000);
 			redirect(base_url());
 			
 		}
 		else if (!$this->session->has_userdata("id")) {
 				# Poner un mensaje de inicio de sesión NO FUNCIONA
-				$this->session->keep_flashdata('mensaje', 'Error');
 				$this->session->mark_as_flash('mensaje');
+				$this->session->set_flashdata('mensaje', 'Error de usuario o contraseña');
+				
 				
 				# Y redireccionar al login
 				redirect(base_url()."login");
 			
 			// redirect(base_url()."login");
 		}
-	}
-
-    public function is_logueado() // PENDIENTE DE PROBAR
-	{
-		if (!$this->session->has_userdata("id")) {
-			# Poner un mensaje de inicio de sesión
-			$this->session->set_flashdata('mensaje', 'Error');
-			# Y redireccionar al login
-			redirect(base_url()."login", 'refresh');
-		    return false;
-		// redirect(base_url()."login");
-		}
-		else {
-			return true;
-		}
-
 	}
 
 	public function logout(){
