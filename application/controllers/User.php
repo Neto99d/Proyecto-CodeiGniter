@@ -46,10 +46,15 @@ class User extends CI_Controller {
 				'id' => $res->id, 
 				'nombre' => $res->nombre,
 				'apellidos' => $res->apellidos,
+				'direccion' => $res->direccion,
+				'telefono' => $res->telefono,
+				'correo' => $res->email,
 				'logged_in' => TRUE
 			);
 			$this->session->set_userdata($data);
-			$tempdata = array('nombre' => $data['nombre'],'apellidos' => $res->apellidos,'logged_in' => TRUE);
+			$tempdata = array('nombre' => $data['nombre'],'apellidos' => $res->apellidos, 'direccion' => $res->direccion,
+			'telefono' => $res->telefono,
+			'correo' => $res->email,'logged_in' => TRUE);
 			$this->session->set_tempdata($tempdata, null, 90000);
 			redirect(base_url());
 			

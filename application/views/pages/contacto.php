@@ -19,7 +19,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
 <body>
     
-   
+   <!--/#contact-page-->
     <section>
     <div id="contact-page" class="container">
     	<div class="bg">
@@ -37,7 +37,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 	    			<div class="contact-form">
 	    				<h2 class="title text-center">Envíe su comentario</h2>
                         <br>
-	    					    				<div class="status alert alert-success" style="display: none"></div>
+	    					    			
 				    	<form action="" id="main-contact-form" class="contact-form row" name="contact-form" method="post">
 				            <div class="form-group col-md-6">
 				                <input type="text" name="contact_name" class="form-control" required="required" placeholder="Nombre">
@@ -72,7 +72,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     			</div>    			
 	    	</div>  
     	</div>	
-    </div><!--/#contact-page-->
+    </div>
     </section>
     
 </body>

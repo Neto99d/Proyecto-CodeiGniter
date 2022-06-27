@@ -15,23 +15,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <style>
 
     </style>
-    <script>
-    // Una funcion que se encarga de obtener los valores del input y por metodo get llamar a la direccion del metodo que actualiza los datos y le pasa los parametros
-    function updateCartItem(obj, rowid) {
-        $.get("<?php echo base_url('carrito/updateCart/'); ?>", {
-            rowid: rowid,
-            qty: obj.value
-        }, function(resp) {
-            if (resp == 'ok') {
-                location.reload();
-            } else {
 
-                alert('Un momento de fallo al actualizar, refrescando pagina para hacer los cambios');
-                location.reload();
-            }
-        });
-    }
-    </script>
 </head>
 
 <body>
@@ -61,15 +45,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         </tr>
                     </thead>
                     <tbody>
-
+                    <?php $temp = 1 ?>
                         <?php if ($this->cart->total_items() <= 0):?>
 
                         <h4>Su carrito esta vacío</h4>
                         <?php endif; ?>
                         <!--EJEMPLO<-->
-                        <?php foreach ($cartItems as $items): ?>
+                        <?php foreach ($cartItems as $i => $items): ?>
                         <tr>
-                            <th scope="row">1</th>
+                            
+                            <th scope="row"><?php echo $temp++ ?></th>
                             <td>
                                 <?php echo $items['name']; ?>
                             </td>
@@ -91,7 +76,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 $<?php echo $this->cart->format_number($items['subtotal']); ?>
                             </td>
                             <td><a class="btn btn-outline-danger"
-                                    href="<?= base_url('carrito/deleteCart/').$items['rowid']?>">Eliminar</a></td>
+                                    href="<?= base_url('carrito/deleteCart/'.$items['rowid']. '/'.$items['id']).'/'.$items['qty']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -103,11 +88,11 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <?php if ($this->session->tempdata('logged_in')):?>
 
 
-                <button class="btn btn-outline-success">Efectuar Compra</button>
+                <a class="btn btn-outline-success" href="<?php echo base_url('pago');?>">Efectuar Compra</a>
 
                 <?php else: ?>
 
-                <button class="btn btn-outline-success disabled">Efectuar Compra</button><br>
+                <a class="btn btn-outline-success disabled" >Efectuar Compra</a><br>
                 <small>Inicie sesión para comprar</small>
                 <?php 
                     endif;?>
@@ -117,6 +102,23 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         </div>
 
     </section>
+    <script>
+    // Una funcion que se encarga de obtener los valores del input y por metodo get llamar a la direccion del metodo que actualiza los datos y le pasa los parametros
+    function updateCartItem(obj, rowid) {
+        $.get("<?php echo base_url('carrito/updateCart/'); ?>", {
+            rowid: rowid,
+            qty: obj.value
+        }, function(resp) {
+            if (resp == 'ok') {
+                location.reload();
+            } else {
+
+                alert('Un momento de fallo al actualizar, refrescando pagina para hacer los cambios');
+                location.reload();
+            }
+        });
+    }
+    </script>
 </body>
 
 </html>

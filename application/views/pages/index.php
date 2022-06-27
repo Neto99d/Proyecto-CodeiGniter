@@ -19,6 +19,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         }
     }
     </style>
+
+</head>
 </head>
 
 <body>
@@ -31,33 +33,33 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     aria-current='true' aria-label='Slide 1'></button>
                 <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='1'
                     aria-label='Slide 2'></button>
-                <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='2'
-                    aria-label='Slide 3'></button>
+                <!-- <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='2'
+                    aria-label='Slide 3'></button> <-->
             </div>
             <div class='carousel-inner'>
                 <div class='carousel-item active' data-bs-interval='5000'>
-                    <img src='assets/images/R.jfif' class='rounded d-block w-100' alt='First slide' width='1200'
-                        height='470'>
+                    <img src='assets/images/R.jfif' class='rounded d-block w-100' alt='First slide' width='1090'
+                        height='450'>
                     <div class='carousel-caption d-none d-md-block'>
-                        
+
 
                     </div>
                 </div>
                 <div class='carousel-item' data-bs-interval='5000'>
-                    <img src='assets/images/R (1).jfif' class='rounded d-block w-100' alt='Second slide' width='1200'
-                        height='470'>
+                    <img src='assets/images/R (1).jfif' class='rounded d-block w-100' alt='Second slide' width='1090'
+                        height='450'>
                     <div class='carousel-caption d-none d-md-block'>
                         <h3>Variedad de productos.</h3>
                     </div>
                 </div>
-                <div class='carousel-item' data-bs-interval='5000'>
+                <!--<div class='carousel-item' data-bs-interval='5000'>
                     <img src='assets/images/R (3).jfif' class='rounded d-block w-100' alt='Third slide' width='1200'
                         height='470'>
                     <div class='carousel-caption d-none d-md-block'>
                        
 
                     </div>
-                </div>
+                </div> -->
             </div>
             <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleDark'
                 data-bs-slide='prev'>
@@ -85,12 +87,17 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <div class='card-body'>
                                 <h5 class='card-title'><?php echo $row->nombre ?></h5>
                                 <p class='card-text'><?php echo $row->descripcion ?></p>
-                                <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar <svg xmlns='http://www.w3.org/2000/svg'
-                                        width='20' height='20' fill='currentColor' class='bi bi-cart'
-                                        viewBox='0 0 16 16'>
+                                <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor'
+                                        class='bi bi-cart' viewBox='0 0 16 16'>
                                         <path
                                             d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
-                                    </svg></a>
+                                    </svg>
+                                </a>
+                                <input class="rounded" type="number" id="cantidad" min="0" max="20" placeholder="Cant."
+                                    onclick="updateCant(this, '<?php echo $row->id ?>')"><br>
+                                <br>
+                                <small>Disponible: <?php echo $row->disponible ?></small>
                             </div>
                         </div>
                     </div>
@@ -112,15 +119,18 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <img src='...' class='card-img-top' alt='...'>
                             <div class='card-body'>
                                 <h5 class='card-title'><?php echo $row->nombre ?></h5>
-                                
-                                <p class='card-text'><?php echo $row->descripcion?></p>
-                                <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar <svg xmlns='http://www.w3.org/2000/svg'
-                                        width='20' height='20' fill='currentColor' class='bi bi-cart'
-                                        viewBox='0 0 16 16'>
+                                <p class='card-text'><?php echo $row->descripcion ?></p>
+                                <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor'
+                                        class='bi bi-cart' viewBox='0 0 16 16'>
                                         <path
                                             d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
-                                    </svg></a>
-                                    
+                                    </svg>
+                                </a>
+                                <input class="rounded" type="number" id="cantidad" min="0" max="20" placeholder="Cant."
+                                    onclick="updateCant(this, '<?php echo $row->id ?>')"><br>
+                                <br>
+                                <small>Disponible: <?php echo $row->disponible ?></small>
                             </div>
                         </div>
                     </div>
@@ -131,7 +141,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         </div>
 
     </section>
+    <script>
+    // Una funcion que se encarga de obtener los valores del input y por metodo get llamar a la direccion del metodo que actualiza los datos y le pasa los parametros
+    function updateCant(obj, id) {
 
+        $.get("<?php echo base_url('carrito/cantProd/'); ?>", {
+            id: id,
+            cant: obj.value
+        });
+    }
+    </script>
 </body>
 
 </html>
