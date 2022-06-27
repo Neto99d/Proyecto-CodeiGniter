@@ -1,5 +1,6 @@
 Esto puede irse actualizando 
 (En el codigo las funciones estan algnas cosas comentadas)
+El funcionamiento de la pagina no es perfecto, faltan cosas y corregir otras :)
 
 A nivel de cliente
 
@@ -21,7 +22,7 @@ Informacion de productos (Obtener la informacion del producto para mostrar los d
 Uso del carrito (agregar al carrito, obtener precio de producto/editar cantidad pedida/eliminar del carrito/ calculo de pago por producto (sub-total) y el total a pagar),
 -----------------------------------------
 
-[Se hizo muy sencillo esta parte, pero al dar en el boton enviar o pagar se vacea del carrito incluso si no se ha puesto nada, esto es porque no se guardo la info en la BD de venta y detalle de venta (Estas tablas estan creadas pero No se llego a hacer la implemetnacion de sus metodos), solamente se muestra la info que esta almacenada en el carrito y ya para ejecutar la compra]
+[Se hizo muy sencillo esta parte, pero al dar en el boton enviar o pagar se vacea del carrito incluso si el formulario tiene algun error en un campo, esto es porque no se guardo la info en la BD de venta y detalle de venta (Estas tablas estan creadas pero No se llego a hacer la implemetnacion de sus metodos), solamente se muestra la info que esta almacenada en el carrito ya para ejecutar la compra]
 
 Ejecucion de compra, pago por transfermovil (formulario como el de la tienda de etecsa por ejemplo y la forma de pago (al menos simular esto)) o posibilidad de pagar en efectivo en la entrega a domicilio si esta disponible.
 --------------------------------------------------
@@ -31,7 +32,7 @@ A nivel de admin
 Agregar/editar/eliminar producto 
 ---------------------------------------
 
-[actualizar disponibilidad de producto NO funciona bien del todo al dejar un producto en 0 al calcular da # negativo]
+[actualizar disponibilidad de producto NO funciona bien del todo al dejar un producto en 0 al calcular da # negativo y tambien que si el usuario modifica la cantidad y se arrepiente no agrega al carrito ya la cantidad se ha modificado en la BD]
 
 (obtener la cantidad disponible de cada producto y a medida que se compre se vaya actualizando la cantidad disponible)
 
