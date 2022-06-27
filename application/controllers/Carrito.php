@@ -109,6 +109,7 @@ class Carrito extends CI_Controller {
     // Vaciar carrito
     public function vaciarCarrito() {
         $this->cart->destroy();
+        redirect( base_url());
     }
 }
 

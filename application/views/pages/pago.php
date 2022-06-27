@@ -45,18 +45,19 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <div class="form-group ">
                                         <div class='form-check d-flex justify-content-center mb-4'>
                                             <input class='form-check-input me-2' type='checkbox' value=''
-                                                id='registerCheck' required aria-describedby='registerCheckHelpText' />
+                                                id='registerCheck' aria-describedby='registerCheckHelpText' />
                                             <label class='form-check-label' for='registerCheck'>
                                                 Entrega a domicilio ($100)
                                             </label>
 
                                         </div>
 
-                                        <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
+                                        <!--   <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
                                             required aria-describedby='registerCheckHelpText' />
+                                       
                                         <label class='form-check-label' for='registerCheck'>
                                             Pagar sus productos en efectivo
-                                        </label>
+                                        </label> -->
 
                                     </div>
                                     <!-- Name input -->
@@ -95,9 +96,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         <label class='form-label' for='ciudad'>Ciudad</label>
                                     </div>
                                     <div class='form-outline mb-4'>
-                                        <input type='tel' name="telefono" id='telefono' class='form-control text-center'
-                                            maxlength="5" required />
-                                        <label class='form-label' for='telefono'>Código Postal</label>
+                                        <input type='tel' name="codigoPostal" id='codigoPostal'
+                                            class='form-control text-center' maxlength="5" required />
+                                        <label class='form-label' for='codigoPostal'>Código Postal</label>
                                     </div>
                                     <div class='form-outline mb-4'>
                                         <input type='text' name="direccion" id='direccion'
@@ -105,13 +106,22 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                             value="<?php echo $this->session->tempdata('direccion')?>" />
                                         <label class='form-label' for='direccion'>Dirección</label>
                                     </div>
-
+                                    <!--
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary pull-right"
                                             onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Gracias, buen día, espere sus productos')">Enviar</button>
-                                    </div>
+                                    </div> <-->
                                 </div>
-
+                                <br>
+                                <div class="text-center">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
+                                        onclick="location.href='<?= base_url('productos')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Seguir comprando</button>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
+                                        onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Pagar
+                                        con Transfermóvil</button>
+                                    <br>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -130,27 +140,12 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 <p>Importe total: $<?php echo $this->cart->format_number($this->cart->total()); ?></p>
                             </address>
                             <br>
-                            <form>
-                                <div class='text-center'>
-                                    <input type='tel' name="telefono" id='telefono' class='text-center' maxlength="16"
-                                        required />
-                                    <br>
-                                    <label class='form-label' for='telefono'>Tarjeta Bancaria</label>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary pull-right"
-                                        onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Pagar con Transfermóvil</button>
-                                        <br>
-                                </div>
-                            </form>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
 </body>
 
 </html>
