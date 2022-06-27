@@ -108,7 +108,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary pull-right"
-                                            onclick="alert('Gracias, buen día, espere sus productos')">Enviar</button>
+                                            onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Gracias, buen día, espere sus productos')">Enviar</button>
                                     </div>
                                 </div>
 
@@ -139,7 +139,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary pull-right"
-                                        onclick="<?php $this->cart->destroy()?> alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Pagar con Transfermóvil</button>
+                                        onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Pagar con Transfermóvil</button>
+                                        <br>
                                 </div>
                             </form>
 

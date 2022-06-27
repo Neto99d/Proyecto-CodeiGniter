@@ -8,7 +8,7 @@ class Usuarios_model extends CI_Model {
         $this->load->database();
     }
 
-   
+     // Guardar datos de usuario en BD
 	 public function save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password){
 		$data  = array(
 			'nombre' => $nombre, 
@@ -22,6 +22,8 @@ class Usuarios_model extends CI_Model {
 		return $this->db->insert('clientes', $data);
 	} 
 
+
+    // Comprobar usuario y contraseña al iniciar sesion
 	public function login($username, $password){
 		
 		$this->db->select('*');

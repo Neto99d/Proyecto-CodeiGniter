@@ -72,9 +72,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         </div>
                     </div>
                 </div>
-                <!--PRODUCTOS<  
-                  esto va en div prod  class="col-sm-5 offset-sm-2 col-md-9 offset-md-0"
-            -->
+
 
                 <div id="prod" class="col-sm-5 offset-sm-2 col-md-9 offset-md-0">
                     <div class='features_items'>
@@ -84,10 +82,13 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <?php foreach($productos as $row): ?>
                             <div class="col">
                                 <div class='card h-100'>
-                                    <img src='...' class='card-img-top' alt='...'>
+                                    <img src='<?= base_url('assets\images\imagesProd/').$row->imagenProd?>'
+                                        class='card-img-top' width='100' height='200'>
                                     <div class='card-body'>
                                         <h5 class='card-title'><?php echo $row->nombre ?></h5>
                                         <p class='card-text'><?php echo $row->descripcion ?></p>
+
+                                        <?php if ($row->disponible != 0 ):?>
                                         <a href="<?= base_url('carrito/AddCart_PageProd/').$row->id?>"
                                             class="btn btn-primary">Agregar
                                             <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'
@@ -96,6 +97,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                     d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
                                             </svg>
                                         </a>
+                                        <?php else: ?>
+                                        <a href="<?= base_url('carrito/AddCart_PageProd/').$row->id?>"
+                                            class="btn btn-primary disabled">Agregar
+                                            <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'
+                                                fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
+                                                <path
+                                                    d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
+                                            </svg>
+                                        </a>
+                                        <?php endif;?>
                                         <input class="rounded" type="number" id="cantidad" min="0" max="20"
                                             placeholder="Cant."
                                             onclick="updateCant(this, '<?php echo $row->id ?>')"><br>
@@ -109,6 +120,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <br>
                     </div>
                     <br>
+                    <!--LA PAGINACION NO FUNCIONA<-->
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item">
@@ -131,14 +143,18 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
             </div>
 
-            <script>
-
-
-
-            </script>
 
     </section>
+    <script>
+    // Una funcion que se encarga de obtener los valores del input y por metodo get llamar a la direccion del metodo que actualiza los datos y le pasa los parametros
+    function updateCant(obj, id) {
 
+        $.get("<?php echo base_url('carrito/cantProd/'); ?>", {
+            id: id,
+            cant: obj.value
+        });
+    }
+    </script>
 </body>
 
 </html>

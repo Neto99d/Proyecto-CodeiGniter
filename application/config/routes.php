@@ -54,6 +54,7 @@ $route['404_override'] = 'pages/view/error';
 $route['translate_uri_dashes'] = FALSE;
 
 // Web
+// Paginas estaticas de codeigniter
 $route['(:any)'] = 'pages/view/$1';
 
 

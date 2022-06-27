@@ -22,6 +22,8 @@ class Pages extends CI_Controller {
         $datos[ 'cartItems' ] = $this->cart->contents();
 
         // Cargando Vistas
+        // Paginas estaticas de codeigniter en views/templates
+        // Agregar nuevas paginas de contenido a views/pages
         $this->load->view( 'templates/header' );
         $this->load->view( 'pages/'.$page, $datos );
         $this->load->view( 'templates/footer' );

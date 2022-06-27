@@ -13,7 +13,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
     <title>Interfaz Beta</title>
     <style>
-    div.titulo{
+    div.titulo {
         text-align: center;
     }
     </style>
@@ -40,7 +40,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     <?php 
                                 endif;?>
                     <div class="justify-content-center">
-                        <h4 id="tituloWeb">Interfaz Beta</h4>
+                        <h4 id="tituloWeb">Tienda Online</h4>
                     </div>
 
                     <div class='align-content-end'>
@@ -135,9 +135,10 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                 </svg> Iniciar sesión/Registrarse</a></li>
                                     </ul>
                                 </li>
+                                <!--PESTAÑA ADMINISTRACION<-->
                                 <!-- <li class = 'nav-item'>
-<button class = 'btn btn-outline-success me-2' type = 'button'>Administración</button>
-</li><-->
+                                 <button class = 'btn btn-outline-success me-2' type = 'button'>Administración</button>
+                                </li>   <-->
 
                                 <li class='nav-item'>
                                     <a href="<?php echo base_url('contacto');?>"

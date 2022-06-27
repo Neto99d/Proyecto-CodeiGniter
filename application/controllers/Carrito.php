@@ -25,6 +25,7 @@ class Carrito extends CI_Controller {
         $this->load->model( 'Productos_model', 'prod' );
     }
 
+    // Agregar al carrito desde la pagina principal
     public function AddCart( $id ) {
 
         $product = $this->prod->get_ProductoID( $id );
@@ -42,6 +43,7 @@ class Carrito extends CI_Controller {
 
     }
 
+   // Agregar al carrito desde la pagina de productos
     public function AddCart_PageProd( $id ) {
 
         $product = $this->prod->get_ProductoID( $id );
@@ -60,6 +62,7 @@ class Carrito extends CI_Controller {
 
     }
 
+    // actualizar datos del carrito
     public function updateCart() {
         $rowid = $this->input->get( 'rowid' );
         $qty = $this->input->get( 'qty' );
@@ -73,11 +76,14 @@ class Carrito extends CI_Controller {
         redirect( base_url().'carrito' );
     }
 
+    // Actualizar cantidad entrada por el usuario del producto seleccionado
     public function cantProd() {
         $id = $this->input->get( 'id' );
         $cant = $this->input->get( 'cant' );
         $product = $this->prod->get_ProductoID( $id );
-        $result = $product->disponible - $cant;   // actualizar disponibilidad de producto
+        // actualizar disponibilidad de producto NO funciona bien del todo al dejar un producto en 0 y calcular da # negativo
+        $result = ( intval( $product->disponible ) -  intval( $cant ) );
+        
         $data = array(
             'cantPedida'   => $cant,
             'disponible'    => $result
@@ -85,16 +91,24 @@ class Carrito extends CI_Controller {
         $this->prod->updateProd( $id, $data );
     }
 
+    // Eliminar del carrito
     public function deleteCart( $data, $id, $cant ) {
-      $product = $this->prod->get_ProductoID( $id );
-      $result = $product->disponible + $cant;   // actualizar disponibilidad de producto
-      $datoP = array(
-          'disponible'    => $result,
-          'cantPedida'  => 0
-      );
-      $this->prod->updateProd( $id, $datoP );
+        $product = $this->prod->get_ProductoID( $id );
+        // actualizar disponibilidad de producto NO funciona bien del todo al dejar un producto en 0 y calcular da # negativo
+        $result = intval( $product->disponible ) + intval( $cant );
+        
+        $datoP = array(
+            'disponible'    => $result,
+            'cantPedida'  => 0
+        );
+        $this->prod->updateProd( $id, $datoP );
         $this->cart->remove( $data );
         redirect( base_url().'carrito' );
+    }
+
+    // Vaciar carrito
+    public function vaciarCarrito() {
+        $this->cart->destroy();
     }
 }
 
