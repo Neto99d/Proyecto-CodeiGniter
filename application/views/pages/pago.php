@@ -34,7 +34,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="contact-form">
-                            <h2 class="title text-center">Datos para ejecutar la compra <br> </h2>
+                            <h2 class="title text-center">Ponga sus datos para ejecutar la compra <br> </h2>
                             <h6 class="title text-center"><small class="text-center">(Ya rellenamos algunos campos por
                                     usted)</small> </h6>
 
