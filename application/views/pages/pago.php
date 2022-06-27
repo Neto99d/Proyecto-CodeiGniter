@@ -114,15 +114,23 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 </div>
                                 <br>
                                 <div class="text-center">
-                                <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
-                                        onclick="location.href='<?= base_url('productos')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Seguir comprando</button>
-                                    <br>
+
                                     <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
                                         onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Pagar
                                         con Transfermóvil</button>
                                     <br>
+                                    <br>
+                                    <small>O puede antes de pagar</small>
+                                    <br>
+                                    <br>
+
                                 </div>
                             </form>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
+                                    onclick="location.href='<?= base_url('productos')?>'">Seguir comprando</button>
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-sm-4">
