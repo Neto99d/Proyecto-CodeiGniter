@@ -40,19 +40,23 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     <?php 
                                 endif;?>
                     <div class="justify-content-center">
-                        <h4 id="tituloWeb">Tienda Online</h4>
+                        <h4 id="tituloWeb">El Trevol Shop</h4>
                     </div>
 
                     <div class='align-content-end'>
 
                         <ul class='nav-justified '>
+                            <?php if ($this->session->tempdata('logged_in') && $this->session->tempdata('isAdmin') === '1'):?>
+                            <small>ADMINISTRADOR  </small>
+                            <?php 
+                             endif;?>
                             <!--Mi Carrito<-->
                             <?php if (count($this->cart->contents()) <= 0):?>
 
                             <?php elseif (count($this->cart->contents()) > 0):?>
 
                             <a href='<?php echo base_url();?>carrito' data-bs-toggle='tooltip'
-                                data-bs-placement='bottom' title='Mi carrito'><svg xmlns='http://www.w3.org/2000/svg'
+                                data-bs-placement='bottom' title='Mi carrito'> <svg xmlns='http://www.w3.org/2000/svg'
                                     width='24' height='24' fill='currentColor' class='bi bi-cart' viewBox='0 0 16 16'>
                                     <path
                                         d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
@@ -64,7 +68,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <!--Iniciar sesión<-->
                             <?php if (!$this->session->tempdata('logged_in')):?>
                             <a href='<?php echo base_url();?>login' data-bs-toggle='tooltip' data-bs-placement='bottom'
-                                title='Iniciar sesión'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'
+                                title='Iniciar sesión'> <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'
                                     fill='currentColor' class='bi bi-box-arrow-in-right' viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
                                         d='M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z' />
@@ -76,7 +80,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <!--Cerrar sesión<-->
                             <?php if ($this->session->tempdata('logged_in')):?>
                             <a aria-disabled="" href='<?php echo base_url('user/logout');?>' data-bs-toggle='tooltip'
-                                data-bs-placement='bottom' title='Cerrar sesión'><svg xmlns='http://www.w3.org/2000/svg'
+                                data-bs-placement='bottom' title='Cerrar sesión'> <svg xmlns='http://www.w3.org/2000/svg'
                                     width='25' height='25' fill='currentColor' class='bi bi-box-arrow-right'
                                     viewBox='0 0 16 16'>
                                     <path fill-rule='evenodd'
@@ -135,11 +139,17 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                                 </svg> Iniciar sesión/Registrarse</a></li>
                                     </ul>
                                 </li>
-                                <!--PESTAÑA ADMINISTRACION<-->
-                                <!-- <li class = 'nav-item'>
-                                 <button class = 'btn btn-outline-success me-2' type = 'button'>Administración</button>
-                                </li>   <-->
+                                <li class='nav-item'>
+                                    <!--PESTAÑA ADMINISTRACION<-->
+                                    <?php if ($this->session->tempdata('logged_in') && $this->session->tempdata('isAdmin') === '1'):?>
 
+
+                                    <button class='btn btn-outline-success me-2' type='button'
+                                        onclick="location.href='<?= base_url('administracion')?>'">Administración</button>
+
+                                    <?php 
+                                endif;?>
+                                </li>
                                 <li class='nav-item'>
                                     <a href="<?php echo base_url('contacto');?>"
                                         class='btn btn-outline-success me-2'>Contacto</a>

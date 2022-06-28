@@ -86,8 +86,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                                     <div class='form-outline mb-4'>
                                         <input type='tel' name="telefono" id='telefono' class='form-control text-center'
-                                            maxlength="8" required
-                                            value="<?php echo $this->session->tempdata('telefono')?>" />
+                                            maxlength="8" placeholder="Opcional" />
                                         <label class='form-label' for='telefono'>Teléfono</label>
                                     </div>
                                     <div class='form-outline mb-4'>

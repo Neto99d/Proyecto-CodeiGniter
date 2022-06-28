@@ -87,6 +87,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <div class='card-body'>
                                         <h5 class='card-title'><?php echo $row->nombre ?></h5>
                                         <p class='card-text'><?php echo $row->descripcion ?></p>
+                                        <p>Precio: $<?php echo $row->precio ?></p>
+                                        <p>Pesaje: <?php echo $row->peso ?></p>
                                         <?php if ($row->disponible != 0 ):?>
                                         <a href="<?= base_url('carrito/AddCart_PageProd/').$row->id?>"
                                             class="btn btn-primary">Agregar
@@ -113,7 +115,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                                         <br>
                                         <br>
-                                        <small>Disponible: <?php echo $row->disponible ?></small>
+                                        <small>Disponible: <?php echo $row->disponible ?> <?php echo $row->peso ?></small>
                                     </div>
                                 </div>
                             </div>

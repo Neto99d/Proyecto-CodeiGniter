@@ -32,7 +32,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
             <br>
 
             <div class="table-responsive">
-                <table class="table table-bordered justify-content-center">
+                <table class="table table-hover table-bordered justify-content-center">
                     <thead>
                         <tr>
                             <th width="5%" scope="col">No.</th>

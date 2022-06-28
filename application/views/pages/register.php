@@ -72,7 +72,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             </div>
 
                             <div class='form-outline mb-4'>
-                                <input type='tel' name="telefono" id='telefono' class='form-control' maxlength="8" required />
+                                <input type='tel' name="telefono" id='telefono' class='form-control' maxlength="8" placeholder="Opcional"/>
                                 <label class='form-label' for='telefono'>Teléfono</label>
                             </div>
 

@@ -27,7 +27,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <!-- CONTENIDO <-->
     <section>
         <!-- CARRUSEL DE IMAGENES <-->
-        <div id='carouselExampleDark' class='carousel carousel-dark slide' data-bs-ride='carousel'>
+        <div id='carouselExampleDark' class='carousel carousel-ligth  slide' data-bs-ride='carousel'>
             <div class='carousel-indicators'>
                 <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='0' class='active'
                     aria-current='true' aria-label='Slide 1'></button>
@@ -41,7 +41,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     <img src='assets/images/R.jfif' class='rounded d-block w-100' alt='First slide' width='1090'
                         height='450'>
                     <div class='carousel-caption d-none d-md-block'>
-
+                    <h3>En Trevol tendrás la suerte de encontrar los productos que buscas.</h3>
 
                     </div>
                 </div>
@@ -49,7 +49,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     <img src='assets/images/R (1).jfif' class='rounded d-block w-100' alt='Second slide' width='1090'
                         height='450'>
                     <div class='carousel-caption d-none d-md-block'>
-                        <h3>Variedad de productos.</h3>
+                        
                     </div>
                 </div>
                 <!--<div class='carousel-item' data-bs-interval='5000'>
@@ -88,6 +88,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <div class='card-body'>
                                 <h5 class='card-title'><?php echo $row->nombre ?></h5>
                                 <p class='card-text'><?php echo $row->descripcion ?></p>
+                                <p>Precio: $<?php echo $row->precio ?></p>
+                                <p>Pesaje: <?php echo $row->peso ?></p>
                                 <?php if ($row->disponible != 0 ):?>
                                 <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar
                                     <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor'
@@ -113,7 +115,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                                 <br>
                                 <br>
-                                <small>Disponible: <?php echo $row->disponible ?></small>
+                                <small>Disponible: <?php echo $row->disponible ?> <?php echo $row->peso ?></small>
                             </div>
                         </div>
                     </div>
@@ -137,6 +139,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <div class='card-body'>
                                 <h5 class='card-title'><?php echo $row->nombre ?></h5>
                                 <p class='card-text'><?php echo $row->descripcion ?></p>
+                                <p>Precio: $<?php echo $row->precio ?></p>
+                                <p>Pesaje: <?php echo $row->peso ?></p>
                                 <?php if ($row->disponible != 0 ):?>
                                 <a href="<?= base_url('carrito/AddCart/').$row->id?>" class="btn btn-primary">Agregar
                                     <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor'
@@ -162,7 +166,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                                 <br>
                                 <br>
-                                <small>Disponible: <?php echo $row->disponible ?></small>
+                                <small>Disponible: <?php echo $row->disponible ?> <?php echo $row->peso ?></small>
                             </div>
                         </div>
                     </div>

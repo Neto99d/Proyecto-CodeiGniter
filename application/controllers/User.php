@@ -51,15 +51,16 @@ class User extends CI_Controller {
 				'direccion' => $res->direccion,
 				'telefono' => $res->telefono,
 				'correo' => $res->email,
+				'isAdmin' => $res->isAdmin,
 				'logged_in' => TRUE
 			);
 			$this->session->set_userdata($data); // guarda los datos de usuario en la sesion
 
 			// para cargar en la vista datos de usuario que inicio sesion
 			$tempdata = array('nombre' => $data['nombre'],'apellidos' => $res->apellidos, 'direccion' => $res->direccion,
-			'telefono' => $res->telefono,
+			'telefono' => $res->telefono, 'isAdmin' => strval($res->isAdmin) ,
 			'correo' => $res->email,'logged_in' => TRUE);
-			$this->session->set_tempdata($tempdata, null, 90000); // esta info durara 25h (90000 segundos) , a traves de ella se muestra el nombre de usuario en la interfaz al iniciar sesion
+			$this->session->set_tempdata($tempdata, null, 90000); // esta info durara 25h (90000 segundos, despues de ese tiempo se borran los datos) , a traves de ella se muestra el nombre de usuario en la interfaz al iniciar sesion por el tiempo
 
 			redirect(base_url());
 			

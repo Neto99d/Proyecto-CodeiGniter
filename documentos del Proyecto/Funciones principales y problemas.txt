@@ -7,12 +7,12 @@ A nivel de cliente
 Falta buscar producto desde la interfaz
 
 ------------------------------------
-[De esto solo se hizo el Loguearse/Registrarse normal sin admin por lo que la verificacion no se hizo, no se hizo lo de la pestaña administracion]
+[OK]
 
 Loguearse/Registrarse (verificar si es admin o no [La pestaña Administracion (donde se hacen las operaciones que solo interesa al admin) esta prevista que se muestre si el usuario es admin])
 
 -------------------------------------
-[OK, falta la parte de agregar productos desde la pestaña administracion que era la idea, de momento se hace directamente desde la BD]
+[OK]
 
 Informacion de productos (Obtener la informacion del producto para mostrar los detalles del mismo, 
 
@@ -29,6 +29,7 @@ Ejecucion de compra, pago por transfermovil (formulario como el de la tienda de 
 
 A nivel de admin
 
+[OK, pero falta posibilidad de elegir que categoria es cada producto desde la interfaz]
 Agregar/editar/eliminar producto 
 ---------------------------------------
 
