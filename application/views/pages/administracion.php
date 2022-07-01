@@ -8,7 +8,6 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
     <link rel='stylesheet' href="<?= base_url().'assets/DataTables/datatables.min.css'?>">
     <link rel='stylesheet' href="<?= base_url().'assets/DataTables/DataTables-1.12.1/css/jquery.dataTables.min.css'?>">
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
@@ -86,6 +85,13 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                         maxlength="50">
                                 </td>
                                 </td>
+                                </td>
+                                <td>
+                                    <input class='form-control' type="text" name="categoria_id" id="categoria_id" maxlength="45"
+                                        value="<?php echo $items->categoria_id;?>">
+
+                                </td>
+                                </td>
                                 <td>
                                     <button class="btn btn-outline-success" type="submit">Actualizar</button>
                             </form>
@@ -122,10 +128,10 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <script src="<?= base_url().'assets/DataTables/datatables.min.js' ?>"></script>
     <script src="<?= base_url().'assets/DataTables/DataTables-1.12.1/js/jquery.dataTables.min.js' ?>"></script>
     <script>
-    $(document).ready(function() {
+    /*$(document).ready(function() {
         $('#example').DataTable();
 
-    });
+    });*/
     </script>
 </body>
 

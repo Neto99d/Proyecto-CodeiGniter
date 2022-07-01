@@ -31,7 +31,7 @@ class User extends CI_Controller {
  // Crear usuario
 	public function create(){
 		extract($_POST);
-        if ($this->Usuarios_model->save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password)) {
+        if ($this->Usuarios_model->save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password, $isAdmin)) {
 			redirect(base_url()."login");
 		}
 		else{
@@ -60,7 +60,7 @@ class User extends CI_Controller {
 			$tempdata = array('nombre' => $data['nombre'],'apellidos' => $res->apellidos, 'direccion' => $res->direccion,
 			'telefono' => $res->telefono, 'isAdmin' => strval($res->isAdmin) ,
 			'correo' => $res->email,'logged_in' => TRUE);
-			$this->session->set_tempdata($tempdata, null, 90000); // esta info durara 25h (90000 segundos, despues de ese tiempo se borran los datos) , a traves de ella se muestra el nombre de usuario en la interfaz al iniciar sesion por el tiempo
+			$this->session->set_tempdata($tempdata, null, 90000); // esta info durara 25h (90000 segundos, despues de ese tiempo se borran los datos) , a traves de ella se muestra el nombre de usuario en la interfaz al iniciar sesion por el tiempo determinado
 
 			redirect(base_url());
 			

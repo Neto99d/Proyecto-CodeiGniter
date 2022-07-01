@@ -109,7 +109,9 @@ class Carrito extends CI_Controller {
     // Vaciar carrito
     public function vaciarCarrito() {
         $this->cart->destroy();
-        redirect( base_url());
+        $this->session->mark_as_flash('mensaje');
+		$this->session->set_flashdata('mensaje', 'Su compra se ha ejecutado con Éxito, si eligió entrega a domicilio espere lo más pronto posible sus productos, que tenga buen día :)');
+        redirect( base_url('pago'));
     }
 }
 

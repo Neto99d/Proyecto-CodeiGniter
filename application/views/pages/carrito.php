@@ -45,7 +45,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $temp = 1 ?>
+                        <?php $temp = 1 ?>
                         <?php if ($this->cart->total_items() <= 0):?>
 
                         <h4>Su carrito esta vacío</h4>
@@ -53,7 +53,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <!--EJEMPLO<-->
                         <?php foreach ($cartItems as $i => $items): ?>
                         <tr>
-                            
+
                             <th scope="row"><?php echo $temp++ ?></th>
                             <td>
                                 <?php echo $items['name']; ?>
@@ -76,7 +76,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 $<?php echo $this->cart->format_number($items['subtotal']); ?>
                             </td>
                             <td><a class="btn btn-outline-danger"
-                                    href="<?= base_url('carrito/deleteCart/'.$items['rowid']. '/'.$items['id']).'/'.$items['qty']?>">Eliminar</a></td>
+                                    href="<?= base_url('carrito/deleteCart/'.$items['rowid']. '/'.$items['id']).'/'.$items['qty']?>">Eliminar</a>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -85,15 +86,18 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <h5>Importe Total: $<?php echo $this->cart->format_number($this->cart->total()); ?></h5>
                 <br>
                 <br>
-                <?php if ($this->session->tempdata('logged_in')):?>
+                <?php if (!$this->session->tempdata('logged_in')):?>
 
+                <a class="btn btn-outline-success disabled" href="<?php echo base_url('pago');?>">Efectuar Compra</a>
 
-                <a class="btn btn-outline-success" href="<?php echo base_url('pago');?>">Efectuar Compra</a>
+                <?php elseif ($this->cart->total_items() <= 0): ?>
+
+                <a class="btn btn-outline-success disabled">Efectuar Compra</a><br>
+                <small>Inicie sesión para comprar</small>
 
                 <?php else: ?>
-
-                <a class="btn btn-outline-success disabled" >Efectuar Compra</a><br>
-                <small>Inicie sesión para comprar</small>
+                    
+                <a class="btn btn-outline-success" href="<?php echo base_url('pago');?>">Efectuar Compra</a>
                 <?php 
                     endif;?>
 

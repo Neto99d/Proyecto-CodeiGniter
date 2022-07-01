@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2022 a las 16:36:41
+-- Tiempo de generación: 30-06-2022 a las 22:10:01
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -79,7 +79,10 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('71vi0tgb5abdag4r24jm5138v8pe1nq2', '::1', 1656457901, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363435373930313b),
 ('0d1s1jk4vdqdvdd01haubu1sedptdd3a', '::1', 1656458186, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363435383138363b),
 ('7voh467s8lg73ie53m1tt5lrk0gfe5im', '::1', 1656512698, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363531323639383b),
-('idq0l72fg9kj8e74d6aobpe3kgf1seo6', '::1', 1656512908, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363531323930383b);
+('idq0l72fg9kj8e74d6aobpe3kgf1seo6', '::1', 1656512908, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363531323930383b),
+('5bh546v16v030fvmh458dvjhqb0o6v5i', '::1', 1656618623, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363631383632333b69647c733a323a223138223b6e6f6d6272657c733a333a224c6961223b6170656c6c69646f737c733a343a22466f6e74223b646972656363696f6e7c733a31323a22542d3537204d6963726f2038223b74656c65666f6e6f7c733a383a223534353538323230223b636f7272656f7c733a31333a226c696140756f2e6564752e6375223b697341646d696e7c733a313a2231223b6c6f676765645f696e7c623a313b5f5f63695f766172737c613a373a7b733a363a226e6f6d627265223b693a313635363730383331333b733a393a226170656c6c69646f73223b693a313635363730383331333b733a393a22646972656363696f6e223b693a313635363730383331333b733a383a2274656c65666f6e6f223b693a313635363730383331333b733a373a22697341646d696e223b693a313635363730383331333b733a363a22636f7272656f223b693a313635363730383331333b733a393a226c6f676765645f696e223b693a313635363730383331333b7d),
+('s687ggh1uogtm0okgehu074alst03hq6', '::1', 1656619309, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363631393330393b69647c733a323a223135223b6e6f6d6272657c733a343a2244757661223b6170656c6c69646f737c733a373a2245726e6573746f223b646972656363696f6e7c733a343a22522d3335223b74656c65666f6e6f7c733a383a223536333437393936223b636f7272656f7c733a31373a2261646d696e406578616d706c652e636f6d223b697341646d696e7c733a303a22223b6c6f676765645f696e7c623a313b5f5f63695f766172737c613a373a7b733a363a226e6f6d627265223b693a313635363730383738353b733a393a226170656c6c69646f73223b693a313635363730383738353b733a393a22646972656363696f6e223b693a313635363730383738353b733a383a2274656c65666f6e6f223b693a313635363730383738353b733a373a22697341646d696e223b693a313635363730383738353b733a363a22636f7272656f223b693a313635363730383738353b733a393a226c6f676765645f696e223b693a313635363730383738353b7d),
+('71f0am2365md334phnomva633hgihsb6', '::1', 1656619567, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635363631393536373b);
 
 -- --------------------------------------------------------
 
@@ -134,7 +137,7 @@ CREATE TABLE `productos` (
   `nombre` varchar(45) DEFAULT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
   `precio` varchar(45) DEFAULT NULL,
-  `categoria_id` int(11) DEFAULT NULL,
+  `categoria_id` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   `disponible` int(200) DEFAULT NULL,
   `cantPedida` int(11) DEFAULT NULL,
@@ -148,11 +151,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `categoria_id`, `estado`, `disponible`, `cantPedida`, `imagenProd`, `peso`, `fecha`) VALUES
-(1, 'Puré de Tomate', ' Puré para acompañar sus alimentos, excelente para Pizzas.', '50', NULL, NULL, 0, 0, 'pure.png', '    ', '0000-00-00'),
-(2, 'Papas', 'Papas de buena calidad, buen tamaño.', '60', 2, NULL, 229, 0, 'papas.jpg', 'Lb', NULL),
-(3, 'Fongo', 'Manos de fongo maduro.', '40', 2, NULL, 49, 3, 'fongo-maduro.jpg', NULL, NULL),
-(4, 'Mostaza', 'Pomos de Mostaza, excelente para complementar con queso y pan.', '50', 1, NULL, 10, 3, 'mostaza.jpg', NULL, NULL),
-(11, 'Remolacha', 'Remolacha', '50', NULL, NULL, 23, NULL, 'Imagen-no-disp.png', '', '2022-06-29');
+(1, 'Puré de Tomate', ' Puré para acompañar sus alimentos, excelente para Pizzas.', '50', 'Pastas', NULL, 0, 0, 'pure.png', '    ', '0000-00-00'),
+(2, 'Papas', 'Papas de buena calidad, buen tamaño.', '60', 'Viandas', NULL, 223, 0, 'papas.jpg', 'Lb', '0000-00-00'),
+(3, 'Fongo', 'Manos de fongo maduro.', '40', 'Viandas', NULL, 46, 0, 'fongo-maduro.jpg', '', '0000-00-00'),
+(4, 'Mostaza', 'Pomos de Mostaza, excelente para complementar con queso y pan.', '50', 'Pastas', NULL, 10, 3, 'mostaza.jpg', '', '0000-00-00'),
+(11, 'Remolacha', 'Remolacha', '50', 'Viandas', NULL, 23, NULL, 'Imagen-no-disp.png', '', '2022-06-29');
 
 -- --------------------------------------------------------
 
@@ -261,18 +264,6 @@ ALTER TABLE `ventas`
 ALTER TABLE `detalle_venta`
   ADD CONSTRAINT `fk_producto_detalle` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_venta_detalle` FOREIGN KEY (`venta_id`) REFERENCES `ventas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD CONSTRAINT `fk_categoria_producto` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `ventas`
---
-ALTER TABLE `ventas`
-  ADD CONSTRAINT `fk_cliente_venta` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

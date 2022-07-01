@@ -18,7 +18,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 </head>
 
 <body>
-  
+
     <!-- CONTENIDO <-->
     <section class='pb-4 '>
         <section class='w-100 p-4 d-flex justify-content-center pb-4'>
@@ -70,11 +70,12 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                 <input type='email' name="email" id='email' class='form-control' required />
                                 <label class='form-label' for='email'>Correo</label>
                             </div>
-
+<!--
                             <div class='form-outline mb-4'>
-                                <input type='tel' name="telefono" id='telefono' class='form-control' maxlength="8" placeholder="Opcional"/>
+                                <input type='tel' name="telefono" id='telefono' class='form-control' maxlength="8"
+                                    placeholder="Opcional" />
                                 <label class='form-label' for='telefono'>Teléfono</label>
-                            </div>
+                            </div> -->
 
                             <div class='form-outline mb-4'>
                                 <input type='text' name="direccion" id='direccion' class='form-control' required />
@@ -83,7 +84,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
                             <!-- Password input -->
                             <div class='form-outline mb-4'>
-                                <input type='password' name="password" id='password' class='form-control' minlength="4" required />
+                                <input type='password' name="password" id='password' class='form-control' minlength="4"
+                                    required />
                                 <label class='form-label' for='password'>Contraseña</label>
                             </div>
 
@@ -93,11 +95,23 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     required />
                                 <label class='form-label' for='repeatpassword'>Repita su contraseña</label>
                             </div>
+                            <!-- Checkbox IsAdmin No funciona bien no pasa el valor -->
+                            <div class='form-check d-flex justify-content-center mb-4'>
+                                <?php if ($this->session->tempdata('logged_in') && $this->session->tempdata('isAdmin') === '1'):?>
 
+                                <input class='form-check-input me-2' type='checkbox' id='isAdmin'
+                                    name="isAdmin" aria-describedby='isAdminCheckHelpText' />
+                                <label class='form-check-label' for='isAdmin'>
+                                    Poner como administrador
+                                </label>
+
+                                <?php 
+                             endif;?>
+                            </div> 
                             <!-- Checkbox -->
                             <div class='form-check d-flex justify-content-center mb-4'>
-                                <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
-                                    required aria-describedby='registerCheckHelpText' />
+                                <input class='form-check-input me-2' type='checkbox' id='registerCheck' required
+                                    aria-describedby='registerCheckHelpText' />
                                 <label class='form-check-label' for='registerCheck'>
                                     Estoy de acuerdo con los términos y condiciones
                                 </label>
@@ -116,7 +130,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
         </section>
 
     </section>
-    
+
 </body>
 
 </html>

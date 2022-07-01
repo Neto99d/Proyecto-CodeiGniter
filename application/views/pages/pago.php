@@ -13,7 +13,9 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
     <link rel='stylesheet' href="<?= base_url().'assets/css/bootstrap.min.css'?>">
     <title>Interfaz Beta</title>
     <style>
-
+    #info {
+        color: red;
+    }
     </style>
 </head>
 
@@ -28,6 +30,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <br>
                         <h2 class="title text-center">Pago</h2>
                         <br>
+                        <h5 id="info" class="title text-center"><small><?php echo $this->session->flashdata('mensaje');?></small></h5>
                         <br>
                     </div>
                 </div>
@@ -36,100 +39,103 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                         <div class="contact-form">
                             <h2 class="title text-center">Ponga sus datos para ejecutar la compra <br> </h2>
                             <h6 class="title text-center"><small class="text-center">(Ya rellenamos algunos campos por
-                                    usted)</small> </h6>
+                                    usted con su información de registro)</small> </h6>
 
                             <br>
-                            <form action="" id="main-contact-form" class="contact-form row" name="contact-form"
-                                method="post">
-                                <div class='text-center mb-3'>
-                                    <div class="form-group ">
-                                        <div class='form-check d-flex justify-content-center mb-4'>
-                                            <input class='form-check-input me-2' type='checkbox' value=''
-                                                id='registerCheck' aria-describedby='registerCheckHelpText' />
-                                            <label class='form-check-label' for='registerCheck'>
-                                                Entrega a domicilio ($100)
-                                            </label>
+                            <div class='container justify-content-center border rounded-3' style='width: 26rem; '>
+                                <form action="<?php echo base_url('carrito/vaciarCarrito');?>" id="main-contact-form"
+                                    class="contact-form row" name="contact-form" method="post">
+                                    <div class='text-center mb-3'>
+                                        <div class="form-group ">
+                                            <div class='form-check d-flex justify-content-center mb-4'>
+                                                <input class='form-check-input me-2' type='checkbox' value=''
+                                                    id='registerCheck' aria-describedby='registerCheckHelpText' />
+                                                <label class='form-check-label' for='registerCheck'>
+                                                    Entrega a domicilio ($100)
+                                                </label>
 
-                                        </div>
+                                            </div>
 
-                                        <!--   <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
+                                            <!--   <input class='form-check-input me-2' type='checkbox' value='' id='registerCheck'
                                             required aria-describedby='registerCheckHelpText' />
                                        
                                         <label class='form-check-label' for='registerCheck'>
                                             Pagar sus productos en efectivo
                                         </label> -->
 
-                                    </div>
-                                    <!-- Name input -->
-                                    <br>
-                                    <div class='form-outline mb-4'>
-                                        <input type='text' name="nombre" id='nombre' class='form-control text-center'
-                                            required maxlength="40"
-                                            value="<?php echo $this->session->tempdata('nombre')?>" />
-                                        <label class='form-label' for='nombre'>Nombre</label>
-                                    </div>
+                                        </div>
+                                        <!-- Name input -->
+                                        <br>
+                                        <div class='form-outline mb-4'>
+                                            <input type='text' name="nombre" id='nombre'
+                                                class='form-control text-center' required maxlength="40"
+                                                value="<?php echo $this->session->tempdata('nombre')?>" />
+                                            <label class='form-label' for='nombre'>Nombre</label>
+                                        </div>
 
-                                    <div class='form-outline mb-4'>
-                                        <input type='text' name="apellidos" id='apellidos'
-                                            class='form-control text-center' required maxlength="30"
-                                            value="<?php echo $this->session->tempdata('apellidos')?>" />
-                                        <label class='form-label' for='apellidos'>Apellidos</label>
-                                    </div>
+                                        <div class='form-outline mb-4'>
+                                            <input type='text' name="apellidos" id='apellidos'
+                                                class='form-control text-center' required maxlength="30"
+                                                value="<?php echo $this->session->tempdata('apellidos')?>" />
+                                            <label class='form-label' for='apellidos'>Apellidos</label>
+                                        </div>
 
-                                    <!-- Email input -->
-                                    <!-- <div class='form-outline mb-4'>
+                                        <!-- Email input -->
+                                        <!-- <div class='form-outline mb-4'>
                                         <input type='email' name="email" id='email' class='form-control text-center'
                                             required maxlength="50"
                                             value="<?php echo $this->session->tempdata('correo')?>" />
                                         <label class='form-label' for='email'>Correo</label>
                                     </div>  -->
 
-                                    <div class='form-outline mb-4'>
-                                        <input type='tel' name="telefono" id='telefono' class='form-control text-center'
-                                            maxlength="8" placeholder="Opcional" />
-                                        <label class='form-label' for='telefono'>Teléfono</label>
-                                    </div>
-                                    <div class='form-outline mb-4'>
-                                        <input type='text' name="ciudad" id='ciudad' class='form-control text-center'
-                                            required maxlength="50" />
-                                        <label class='form-label' for='ciudad'>Ciudad</label>
-                                    </div>
-                                    <div class='form-outline mb-4'>
-                                        <input type='tel' name="codigoPostal" id='codigoPostal'
-                                            class='form-control text-center' maxlength="5" required />
-                                        <label class='form-label' for='codigoPostal'>Código Postal</label>
-                                    </div>
-                                    <div class='form-outline mb-4'>
-                                        <input type='text' name="direccion" id='direccion'
-                                            class='form-control text-center ' required maxlength="60"
-                                            value="<?php echo $this->session->tempdata('direccion')?>" />
-                                        <label class='form-label' for='direccion'>Dirección</label>
-                                    </div>
-                                    <!--
+                                      <!--  <div class='form-outline mb-4'>
+                                            <input type='tel' name="telefono" id='telefono'
+                                                class='form-control text-center' maxlength="8" placeholder="Opcional" />
+                                            <label class='form-label' for='telefono'>Teléfono</label>
+                                        </div> -->
+                                        <div class='form-outline mb-4'>
+                                            <input type='text' name="ciudad" id='ciudad'
+                                                class='form-control text-center' required maxlength="50" />
+                                            <label class='form-label' for='ciudad'>Ciudad</label>
+                                        </div>
+                                        <div class='form-outline mb-4'>
+                                            <input type='tel' name="codigoPostal" id='codigoPostal'
+                                                class='form-control text-center' maxlength="5" required />
+                                            <label class='form-label' for='codigoPostal'>Código Postal</label>
+                                        </div>
+                                        <div class='form-outline mb-4'>
+                                            <input type='text' name="direccion" id='direccion'
+                                                class='form-control text-center ' required maxlength="60"
+                                                value="<?php echo $this->session->tempdata('direccion')?>" />
+                                            <label class='form-label' for='direccion'>Dirección</label>
+                                        </div>
+                                        <!--
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary pull-right"
                                             onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Gracias, buen día, espere sus productos')">Enviar</button>
                                     </div> <-->
-                                </div>
-                                <br>
+                                    </div>
+                                    <br>
+                                    <div class="text-center">
+
+                                        <button type="submit" class="btn btn-primary pull-right" id="btnPagar">Pagar
+                                            con Transfermóvil</button>
+                                        <br>
+                                        <br>
+                                        <small>O puede antes de pagar</small>
+                                        <br>
+                                        <br>
+
+                                    </div>
+                                </form>
+
                                 <div class="text-center">
-
                                     <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
-                                        onclick="location.href='<?= base_url('carrito/vaciarCarrito')?>', alert('Usted a realizado su compra con éxito, buen día y disfrútelo');">Pagar
-                                        con Transfermóvil</button>
-                                    <br>
-                                    <br>
-                                    <small>O puede antes de pagar</small>
-                                    <br>
-                                    <br>
-
+                                        onclick="location.href='<?= base_url('productos')?>'">Seguir comprando</button>
+                                        <br>
+                                        <br>
                                 </div>
-                            </form>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary pull-right" id="btnPagar"
-                                    onclick="location.href='<?= base_url('productos')?>'">Seguir comprando</button>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-sm-4">

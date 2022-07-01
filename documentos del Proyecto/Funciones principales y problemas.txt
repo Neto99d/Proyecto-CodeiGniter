@@ -6,6 +6,9 @@ A nivel de cliente
 
 Falta buscar producto desde la interfaz
 
+Hay botones que de la nada dejaron de funcionar como deberian (Boton Tienda que esta en la pagina header no funciona en pestaña Administracion (en las demas sí) y eso que son paginas distintas. En modo Movil el boton de menu se despliega pero no se contrae de nuevo)
+
+La logica de las Ofertas del dia y lo mas vendido no se implemento
 ------------------------------------
 [OK]
 
@@ -22,14 +25,16 @@ Informacion de productos (Obtener la informacion del producto para mostrar los d
 Uso del carrito (agregar al carrito, obtener precio de producto/editar cantidad pedida/eliminar del carrito/ calculo de pago por producto (sub-total) y el total a pagar),
 -----------------------------------------
 
-[Se hizo muy sencillo esta parte, pero al dar en el boton pagar se vacea del carrito incluso si el formulario tiene algun error en un campo por validacion, esto es porque no se guardo la info en la BD de venta y detalle de venta (Estas tablas estan creadas pero No se llego a hacer la implemetnacion de sus metodos), solamente se muestra la info que esta almacenada en el carrito ya para ejecutar la compra] y ademas la funcion vaciar carrito esta en el boton pagar :( no haye como validar esa parte de que si algo va mal en el formulario no habilite el boton o cosas asi
+[OK]
+(la BD de venta y detalle de venta, Estas tablas estan creadas pero No se llego a hacer la implemetnacion de sus metodos), solamente se muestra la info que esta almacenada en el carrito ya para ejecutar la compra].
 
-Ejecucion de compra, pago por transfermovil (formulario como el de la tienda de etecsa por ejemplo y la forma de pago (al menos simular esto)) o posibilidad de pagar en efectivo en la entrega a domicilio si esta disponible.
+Ejecucion de compra, pago por transfermovil (La idea era formulario como el de la tienda de etecsa por ejemplo y la forma de pago (al menos simular esto)) o posibilidad de pagar en efectivo en la entrega a domicilio si esta disponible. 
 --------------------------------------------------
 
 A nivel de admin
+Registrar otros admin (No funciona bien al marcar es admin, no se envia el TRUE del checkbox)
 
-[OK, pero falta posibilidad de elegir que categoria es cada producto desde la interfaz]
+[OK]
 Agregar/editar/eliminar producto 
 ---------------------------------------
 

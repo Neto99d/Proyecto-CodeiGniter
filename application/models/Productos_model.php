@@ -27,7 +27,7 @@ class Productos_model extends CI_Model {
 
         $result = $this->get_Catg();
         foreach ( $result as $index=>$row ):
-        $this->db->select( 'p.nombre as nombrep, p.id as idproducto, precio' )->from( 'productos p' )->where( 'p.categoria_id', $row->id );
+        $this->db->select( 'p.nombre as nombrep, p.id as idproducto, precio' )->from( 'productos p' )->where( 'p.categoria_id', $row->nombre );
         $result[ $index ]->productos = $this->db->get()->result();
 
         endforeach;

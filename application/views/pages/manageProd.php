@@ -55,7 +55,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                     <div>
                         <br>
                         <label class='form-label' for="peso">Unidad de Pesaje</label>
-                        <input class='form-control' name="peso" placeholder="Ejemplo: Lb, Oz, tonelada o T" type="text" maxlength="15">
+                        <input class='form-control' name="peso" placeholder="Si la tiene. Ejemplo: Lb, Oz, tonelada o T" type="text"
+                            maxlength="15">
                     </div>
                     <div>
                         <br>
@@ -69,6 +70,16 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             type="text">
                         <br>
                         <br>
+
+
+                        <label class='form-label' for="categoria_id">Categoria</label>
+                        <select class='form-control' name="categoria_id" id="categoria_id">
+                            <?php foreach ($catProd as $item):?>
+                            <option value="<?php echo $item->nombre?>"><?php echo $item->nombre?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <br>
+
                         <button class="btn btn-outline-success" type="submit">Insertar</button>
                         <br>
                         <br>

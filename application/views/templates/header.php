@@ -143,7 +143,6 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                                     <!--PESTAÑA ADMINISTRACION<-->
                                     <?php if ($this->session->tempdata('logged_in') && $this->session->tempdata('isAdmin') === '1'):?>
 
-
                                     <button class='btn btn-outline-success me-2' type='button'
                                         onclick="location.href='<?= base_url('administracion')?>'">Administración</button>
 

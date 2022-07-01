@@ -9,7 +9,7 @@ class Usuarios_model extends CI_Model {
     }
 
      // Guardar datos de usuario en BD
-	 public function save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password){
+	 public function save($nombre, $apellidos, $username, $email, $telefono, $direccion, $password, $isAdmin){
 		$data  = array(
 			'nombre' => $nombre, 
 			'apellidos' => $apellidos, 
@@ -18,6 +18,7 @@ class Usuarios_model extends CI_Model {
 			'telefono' => $telefono, 
 			'direccion' => $direccion, 
 			'password' => $password , 
+			'isAdmin'  => $isAdmin,
 		);
 		return $this->db->insert('clientes', $data);
 	} 
