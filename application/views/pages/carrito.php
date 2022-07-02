@@ -88,8 +88,8 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                 <br>
                 <?php if (!$this->session->tempdata('logged_in')):?>
 
-                <a class="btn btn-outline-success disabled" href="<?php echo base_url('pago');?>">Efectuar Compra</a>
-
+                <a class="btn btn-outline-success disabled" href="<?php echo base_url('pago');?>">Efectuar Compra</a><br>
+                <small>Inicie sesión para comprar</small>
                 <?php elseif ($this->cart->total_items() <= 0): ?>
 
                 <a class="btn btn-outline-success disabled">Efectuar Compra</a><br>
