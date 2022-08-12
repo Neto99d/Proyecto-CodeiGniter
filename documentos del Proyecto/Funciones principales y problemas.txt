@@ -1,0 +1,44 @@
+Esto puede irse actualizando 
+(En el codigo las funciones estan algnas cosas comentadas)
+El funcionamiento de la pagina no es perfecto, faltan cosas y corregir otras :)
+
+A nivel de cliente
+
+Falta buscar producto desde la interfaz
+
+Hay botones que de la nada dejaron de funcionar como deberian (Boton Tienda que esta en la pagina header no funciona en pestaña Administracion (en las demas sí) y eso que son paginas distintas. En modo Movil el boton de menu se despliega pero no se contrae de nuevo)
+
+La logica de las Ofertas del dia y lo mas vendido no se implemento
+------------------------------------
+[OK]
+
+Loguearse/Registrarse (verificar si es admin o no [La pestaña Administracion (donde se hacen las operaciones que solo interesa al admin) esta prevista que se muestre si el usuario es admin])
+
+-------------------------------------
+[OK]
+
+Informacion de productos (Obtener la informacion del producto para mostrar los detalles del mismo, 
+
+-------------------------------------
+[OK]
+
+Uso del carrito (agregar al carrito, obtener precio de producto/editar cantidad pedida/eliminar del carrito/ calculo de pago por producto (sub-total) y el total a pagar),
+-----------------------------------------
+
+[OK]
+(la BD de venta y detalle de venta, Estas tablas estan creadas pero No se llego a hacer la implemetnacion de sus metodos), solamente se muestra la info que esta almacenada en el carrito ya para ejecutar la compra].
+
+Ejecucion de compra, pago por transfermovil (La idea era formulario como el de la tienda de etecsa por ejemplo y la forma de pago (al menos simular esto)) o posibilidad de pagar en efectivo en la entrega a domicilio si esta disponible. 
+--------------------------------------------------
+
+A nivel de admin
+Registrar otros admin (No funciona bien al marcar es admin, no se envia el TRUE del checkbox)
+
+[OK]
+Agregar/editar/eliminar producto 
+---------------------------------------
+
+[actualizar disponibilidad de producto NO funciona bien del todo (a veces calcula mal) al dejar un producto en 0 al calcular da # negativo y tambien que si el usuario modifica la cantidad y se arrepiente no agrega al carrito ya la cantidad se ha modificado en la BD]
+
+(obtener la cantidad disponible de cada producto y a medida que se compre se vaya actualizando la cantidad disponible)
+

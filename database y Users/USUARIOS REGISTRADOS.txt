@@ -1,0 +1,13 @@
+Para inicio de sesion
+
+Usuarios normales
+
+Usuario: neto99 o admin@example.com    Contraseña: admin
+
+Usuario: user99 o user@example.com     Contraseña: 1234
+
+
+
+Administrador
+
+Usuario: lia99 o lia@uo.edu.cu    Contraseña: admin
