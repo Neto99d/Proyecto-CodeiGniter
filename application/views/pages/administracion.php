@@ -42,7 +42,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
                             <th width="10%" scope="col">Pesaje</th>
                             <th width="10%" scope="col">Fecha</th>
                             <th width="10%" scope="col">Imagen</th>
-							<th width="15%" scope="col">Categorías</th>
+			    <th width="15%" scope="col">Categorías</th>
                             <th width="10%" scope="col">Operaciones</th>
 
                         </tr>
